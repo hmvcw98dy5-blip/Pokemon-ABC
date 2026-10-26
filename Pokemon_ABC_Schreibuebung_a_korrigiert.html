@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Pokémon ABC · Kleines a</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#173250;background:#eaf4f9}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:16px;display:flex;justify-content:center}
+main{width:min(760px,100%)}header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+h1{font-size:clamp(25px,5vw,36px);margin:8px 0}p{line-height:1.45}
+.tag{background:#fff0b8;padding:8px 12px;border-radius:30px;font-weight:700}
+.panel{background:white;border:2px solid #c4ddeb;border-radius:24px;padding:18px;box-shadow:0 6px 22px #17325012}
+.info{font-size:17px;margin:6px 0 14px}.step{font-weight:750;color:#1858a5}
+svg{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none;background:#fffef8;border-radius:16px;border:1px solid #e6e7e0}
+.guide{fill:none;stroke:#c7cbd1;stroke-width:23;stroke-linecap:round;stroke-linejoin:round}
+.completed{fill:none;stroke:#39a76d;stroke-width:23;stroke-linecap:round;stroke-linejoin:round}
+.activeTrace{fill:none;stroke:#1873d3;stroke-width:19;stroke-linecap:round;stroke-linejoin:round}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}button{font:inherit;font-weight:750;padding:12px 18px;border:0;border-radius:14px;background:#1d66b5;color:white;cursor:pointer}
+button.secondary{background:#e7eff7;color:#173250}button:disabled{opacity:.5}
+#feedback{min-height:28px;margin:12px 0 0;font-weight:650}small{color:#4e6376}
+</style></head><body><main>
+<header><h1>Pokémon ABC <span aria-hidden="true">✏️</span></h1><span class="tag">Buchstabe a</span></header>
+<section class="panel">
+<p class="info" id="instruction"><span class="step">Schritt 1 von 2:</span> Starte am blauen Punkt und fahre die Rundung gegen den Uhrzeigersinn nach.</p>
+<svg id="board" viewBox="0 0 600 460" aria-label="Kleines a zum Nachspuren">
+<line x1="25" y1="60" x2="575" y2="60" stroke="#d2dce4" stroke-width="2"/>
+<line x1="25" y1="155" x2="575" y2="155" stroke="#8bb8d4" stroke-width="2" stroke-dasharray="8 8"/>
+<line x1="25" y1="330" x2="575" y2="330" stroke="#dd7b88" stroke-width="3"/>
+<line x1="25" y1="408" x2="575" y2="408" stroke="#d2dce4" stroke-width="2"/>
+<text x="28" y="48" font-size="16" fill="#6e8294">Oberlinie</text>
+<text x="28" y="143" font-size="16" fill="#6e8294">Mittellinie</text>
+<text x="28" y="320" font-size="16" fill="#6e8294">Grundlinie</text>
+<g transform="translate(-300,-170) scale(1.45)">
+<path id="stroke1" class="guide" d="M 469 239 C 444 210, 383 213, 361 246 C 331 292, 364 346, 412 345 C 455 345, 476 317, 476 277"/>
+<path id="stroke2" class="guide" d="M 476 235 L 476 345"/>
+<path id="done1" class="completed" d="M 469 239 C 444 210, 383 213, 361 246 C 331 292, 364 346, 412 345 C 455 345, 476 317, 476 277" style="display:none"/>
+<path id="done2" class="completed" d="M 476 235 L 476 345" style="display:none"/>
+<path id="trace" class="activeTrace" d=""/>
+<circle id="start" cx="469" cy="239" r="12" fill="#1873d3" stroke="white" stroke-width="4"/>
+</g>
+<text id="hint" x="300" y="390" text-anchor="middle" font-size="16" fill="#567188">Mit dem Finger oder Apple Pencil nachfahren</text>
+</svg>
+<div id="feedback" role="status">Bereit? Beginne am blauen Punkt.</div>
+<div class="controls"><button id="reset" class="secondary">↻ Neu beginnen</button><button id="demo" class="secondary">▶ Schreibweg zeigen</button></div>
+<p><small>Testversion: Wir prüfen zunächst Schreibform, Strichfolge und Bedienung. Die Erkennung arbeitet mit einer großzügigen Toleranz.</small></p>
+</section></main>
+<script>
+(()=>{'use strict';
+const board=document.getElementById('board'), p=[document.getElementById('stroke1'),document.getElementById('stroke2')], done=[document.getElementById('done1'),document.getElementById('done2')], trace=document.getElementById('trace'),start=document.getElementById('start'),msg=document.getElementById('feedback'),ins=document.getElementById('instruction');
+let step=0,active=false,progress=0,coords=[],animation=null;
+const samples=p.map(path=>{let n=180,L=path.getTotalLength();return Array.from({length:n+1},(_,i)=>path.getPointAtLength(L*i/n))});
+function local(e){let pt=board.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;let m=p[0].getScreenCTM();return pt.matrixTransform(m.inverse())}
+function distance(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+function render(){done.forEach((d,i)=>d.style.display=i<step?'':'none');start.style.display=step>=2?'none':'';if(step<2){let s=samples[step][0];start.setAttribute('cx',s.x);start.setAttribute('cy',s.y)}ins.innerHTML=step===0?'<span class="step">Schritt 1 von 2:</span> Oben rechts beginnen und die Rundung gegen den Uhrzeigersinn schreiben.':step===1?'<span class="step">Schritt 2 von 2:</span> Rechts oben neu ansetzen und den geraden Abstrich nach unten ziehen.':'<span class="step">Geschafft!</span> Du hast das kleine a geschrieben! 🎉'}
+function reset(){if(animation)cancelAnimationFrame(animation);animation=null;step=0;active=false;progress=0;coords=[];trace.setAttribute('d','');msg.textContent='Bereit? Beginne am blauen Punkt.';render()}
+function draw(){trace.setAttribute('d',coords.length?'M '+coords.map(c=>c.x.toFixed(1)+' '+c.y.toFixed(1)).join(' L '):'')}
+function begin(e){if(step>=2||animation)return;let pt=local(e),s=samples[step][0];if(distance(pt,s)>30){msg.textContent='Bitte direkt am blauen Punkt starten.';return}e.preventDefault();board.setPointerCapture(e.pointerId);active=true;progress=0;coords=[s];draw();msg.textContent='Sehr gut, weiter entlang der grauen Linie!'}
+function move(e){if(!active)return;e.preventDefault();let pt=local(e),arr=samples[step],best=progress,bestD=Infinity;for(let i=Math.max(0,progress-6);i<=Math.min(arr.length-1,progress+24);i++){let d=distance(pt,arr[i]);if(d<bestD){bestD=d;best=i}}
+if(bestD>34){msg.textContent='Bleib möglichst auf der Buchstabenlinie.';return}
+if(best>=progress){progress=best;coords=arr.slice(0,progress+1);draw()}
+if(progress>=arr.length-5){active=false;done[step].style.display='';trace.setAttribute('d','');step++;render();msg.textContent=step===2?'Klasse! Das kleine a ist fertig. 🌟':'Prima! Jetzt am zweiten blauen Punkt beginnen.'}}
+function end(){if(!active)return;active=false;trace.setAttribute('d','');coords=[];progress=0;msg.textContent='Versuche den Strich noch einmal vom Startpunkt bis zum Ende.'}
+board.addEventListener('pointerdown',begin);board.addEventListener('pointermove',move);board.addEventListener('pointerup',end);board.addEventListener('pointercancel',end);
+document.getElementById('reset').addEventListener('click',reset);
+document.getElementById('demo').addEventListener('click',()=>{reset();let idx=0,k=0;msg.textContent='So wird das kleine a geschrieben.';function tick(){if(idx>=2){step=2;render();msg.textContent='Jetzt bist du dran! Tippe auf „Neu beginnen“.';animation=null;return}let arr=samples[idx];coords=arr.slice(0,k+1);draw();k+=3;if(k>=arr.length){done[idx].style.display='';trace.setAttribute('d','');idx++;k=0;step=idx;render()}animation=requestAnimationFrame(tick)}tick()});
+render();
+})();
+</script></body></html>
