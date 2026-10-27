@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 0.9 · Grundschrift</title>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.0 · Spezialattacken</title>
 <style>
 :root{font-family:"Chalkboard SE","Comic Sans MS",ui-rounded,system-ui,-apple-system,sans-serif;color:#223a56;background:#eaf4ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff9ce,transparent 37%),linear-gradient(145deg,#e5f7ed,#e9f3ff 68%,#fcecff)}button{font:inherit;font-weight:800;border:0;border-radius:16px;padding:12px 18px;min-height:49px;background:#fff;color:#254363;box-shadow:0 3px 0 #bed0dd;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(2px);box-shadow:0 1px 0 #bed0dd}button:disabled{opacity:.42;transform:none;cursor:default}.primary{background:#ffcc43;box-shadow:0 4px 0 #e5a927}.blue{background:#4c80e5;color:#fff;box-shadow:0 4px 0 #3156a5}.green{background:#39b887;color:white;box-shadow:0 4px 0 #239268}.muted{background:#eaf0f8;box-shadow:0 3px 0 #cbd6e5}.shell{max-width:1250px;margin:auto;padding:16px clamp(10px,2.4vw,24px) 35px}.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.logo{font-weight:950;font-size:clamp(22px,3.5vw,34px);letter-spacing:-.8px;color:#2a61b2}.version{font-size:12px;color:#66829b;margin-left:8px}.score{border-radius:40px;background:white;padding:10px 17px;font-weight:850;box-shadow:0 3px 12px #28456913}.panel{border:3px solid #fff;background:#ffffffed;border-radius:30px;padding:clamp(14px,2.8vw,30px);box-shadow:0 12px 38px #23456619;text-align:center}.eyebrow{color:#5170a0;font-weight:850;letter-spacing:.5px;font-size:14px;text-transform:uppercase}.title{font-size:clamp(25px,4vw,39px);font-weight:950;line-height:1.15;margin:8px 0}.sub{color:#5e7389;margin:7px auto 17px;font-size:clamp(15px,1.7vw,18px);max-width:760px}.steps{display:flex;gap:7px;justify-content:center;align-items:center;margin:10px auto 18px}.step{padding:8px 13px;border-radius:25px;background:#e8edf6;color:#667c9a;font-size:13px;font-weight:900}.step.on{background:#ffe19a;color:#8b5a00}.step.done{background:#d7f5e8;color:#217753}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin:16px 0 4px}.pokemonWrap{position:relative;display:grid;place-items:center;min-height:220px;max-width:390px;margin:0 auto 4px;background:radial-gradient(ellipse at center,#e2f5ff 0,#effaff 60%,transparent 70%);border-radius:50%}.pokemon{width:min(260px,55vw);height:225px;object-fit:contain;filter:drop-shadow(0 12px 6px #324b6825)}.fallback{font-size:76px;display:none}.pokename{font-size:clamp(30px,5vw,54px);font-weight:950;letter-spacing:1px;color:#315f9f;margin:12px 0}.slots{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:10px auto 18px}.slot{height:52px;min-width:clamp(29px,4.6vw,47px);border-bottom:4px solid #8cb1e4;font-size:clamp(23px,3.4vw,32px);font-weight:950;display:grid;place-items:center;color:#244a84}.tiles{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;max-width:790px;margin:14px auto}.tile{font-size:clamp(22px,3vw,30px);min-width:52px;padding:8px 12px;background:#f7d85e;box-shadow:0 4px 0 #d8b640}.tile.used{visibility:hidden}.tile .school-word{pointer-events:none}.slot .school-word{pointer-events:none}.message{min-height:29px;font-size:18px;font-weight:800;color:#386db3;margin:10px 0}.writing{margin:15px -5px 8px;overflow-x:auto;overflow-y:hidden;border:3px solid #d8e7f7;border-radius:20px;background:#fffefb;overscroll-behavior-x:contain}.board{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}.board.free{min-height:250px}.legend{font-size:14px;color:#637990;margin:8px auto;max-width:900px}.note{font-size:12px;color:#7990a5;margin-top:20px}.modecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:830px;margin:22px auto}.modecard{padding:24px 15px;min-height:150px;border:3px solid #d9e8f8;background:#f7fbff;border-radius:22px;text-align:center;cursor:pointer}.modecard strong{display:block;font-size:23px;margin:10px 0}.modecard span{font-size:15px;color:#647b96}.choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:620px;margin:14px auto}.choice{background:#f7fbff;border:3px solid #d9e7f6;border-radius:22px;min-height:170px;display:grid;place-items:center}.choice img{height:125px;max-width:100%;object-fit:contain}.choice.good{border-color:#39b887;background:#e8fff5}.choice.bad{border-color:#ed8383;background:#fff0f0}.mini{font-size:14px}.complete{font-size:75px;line-height:1.3}.hide{display:none!important}@media(max-width:620px){.shell{padding:9px 8px 24px}.panel{padding:13px 9px;border-radius:22px}.steps{gap:4px}.step{font-size:11px;padding:7px 9px}.tile{min-width:43px}.slot{height:45px}.modecards{grid-template-columns:1fr}.pokemonWrap{min-height:180px}.pokemon{height:185px}.choice{min-height:130px}.choice img{height:100px}}
 
@@ -22,7 +22,37 @@
 .copy-write{margin:10px 0}
 .copy-write .board{min-height:300px}
 @media(max-width:620px){.copy-reference svg{height:140px}.copy-write .board{min-height:220px}}
-</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 0.9</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
+
+/* Spezialattacken: sechs unterschiedliche, CSS-animierte Kampfbühnen. */
+.reward-box.is-special{background:linear-gradient(155deg,#182749,#20365d 65%,#172342);border-color:#fce4a1;color:#fff;box-shadow:0 0 0 4px #fff6,0 20px 90px #020e30a8}
+.reward-box.is-special .reward-title{color:#fff4bf;text-shadow:0 2px 12px #ffd75a55}
+.reward-box.is-special .sub{color:#e9f0ff}
+.attack-stage{position:relative;height:clamp(240px,42vh,340px);overflow:hidden;isolation:isolate;border-radius:24px;margin:12px 0;background:radial-gradient(circle at 50% 52%,var(--attack-light),transparent 48%),radial-gradient(ellipse at 50% 90%,#ffffff20,transparent 65%),linear-gradient(140deg,var(--attack-dark),#0c1939)}
+.attack-stage::after{content:"";position:absolute;inset:auto 10% 7%;height:18%;border-radius:50%;background:#0b143a8c;filter:blur(18px);z-index:0}
+.attack-stage[data-type=psychic]{--attack-light:#c97cffb5;--attack-dark:#31144e;--attack-color:#dfb3ff}
+.attack-stage[data-type=fire]{--attack-light:#ff8b36c9;--attack-dark:#6d2117;--attack-color:#ffb344}
+.attack-stage[data-type=water]{--attack-light:#4cceffbd;--attack-dark:#0b466f;--attack-color:#a0efff}
+.attack-stage[data-type=electric]{--attack-light:#ffe868c7;--attack-dark:#5d4810;--attack-color:#fff9a5}
+.attack-stage[data-type=leaf]{--attack-light:#91e66ab8;--attack-dark:#164d35;--attack-color:#b5ffa2}
+.attack-stage[data-type=dragon]{--attack-light:#ac8effc2;--attack-dark:#26376d;--attack-color:#c4b3ff}
+.attack-stage .attack-mon{position:absolute;z-index:4;left:50%;top:48%;height:76%;max-width:76%;width:auto;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 14px 9px #070d2e88);animation:attack-mon 2.7s ease-in-out infinite}
+.attack-stage .attack-ring{position:absolute;z-index:2;left:50%;top:48%;width:36%;aspect-ratio:1;border:5px solid var(--attack-color);border-radius:50%;box-shadow:0 0 20px var(--attack-color),inset 0 0 25px var(--attack-color);animation:attack-ring 2.7s ease-out infinite;pointer-events:none}
+.attack-stage .attack-ring.second{animation-delay:1.1s}
+.attack-stage .attack-particle{position:absolute;left:50%;top:48%;z-index:3;width:var(--sz);height:var(--sz);border-radius:50%;background:var(--attack-color);box-shadow:0 0 15px 3px var(--attack-color);animation:attack-particle var(--dur) ease-out infinite;animation-delay:var(--delay);pointer-events:none}
+.attack-stage[data-type=fire] .attack-particle{border-radius:10% 80% 30% 80%;transform:rotate(45deg)}
+.attack-stage[data-type=water] .attack-particle{border:2px solid #fff8;background:#83dfffaa}
+.attack-stage[data-type=electric] .attack-particle{border-radius:1px;clip-path:polygon(48% 0,100% 0,65% 45%,100% 45%,24% 100%,42% 55%,0 55%)}
+.attack-stage[data-type=leaf] .attack-particle{border-radius:0 85% 0 85%;background:#a9f58a}
+.attack-stage[data-type=dragon] .attack-particle{border-radius:35% 65% 25% 75%}
+.attack-name{display:inline-block;padding:8px 20px;border-radius:50px;background:#ffffff25;border:1px solid #ffffff55;color:#fff;font-size:20px;font-weight:950;letter-spacing:.3px}
+.attack-replay{background:#ffffff22;color:#fff;border:2px solid #ffffff70;box-shadow:none}
+.reward-box.is-special .reward-actions{gap:10px;flex-wrap:wrap}
+.reward-box.is-special .reward-actions button{min-width:140px}
+@keyframes attack-mon{0%,100%{transform:translate(-50%,-50%) scale(.96) rotate(-3deg)}35%{transform:translate(-50%,-53%) scale(1.09) rotate(2deg)}62%{transform:translate(-50%,-50%) scale(1.04) rotate(-2deg)}}
+@keyframes attack-ring{0%{transform:translate(-50%,-50%) scale(.25);opacity:0}20%{opacity:.9}90%,100%{transform:translate(-50%,-50%) scale(3.1);opacity:0}}
+@keyframes attack-particle{0%{transform:translate(-50%,-50%) scale(.2) rotate(0);opacity:0}15%{opacity:1}75%{opacity:.9}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.3) rotate(280deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.attack-stage .attack-mon,.attack-stage .attack-ring,.attack-stage .attack-particle{animation:none}.attack-stage .attack-particle{display:none}}
+</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.0</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
 <script>
 'use strict';
 // POKÉMON-INDEX: Diese Liste steuert sowohl Namen-Schreiben als auch Namen-Lesen.
@@ -68,12 +98,12 @@ const REWARD_POKEMON=[
  ['Pachirisu',417],['Plinfa',393],['Chelast',387],['Panflam',390]
 ];
 const SPECIAL_POKEMON=[
- {name:'Mewtu',id:150,fx:'🔮 ✨ 🔮',move:'Psychokinese!'},
- {name:'Glurak',id:6,fx:'🔥 🔥 🔥',move:'Feuersturm!'},
- {name:'Turtok',id:9,fx:'💦 🌊 💦',move:'Hydropumpe!'},
- {name:'Raichu',id:26,fx:'⚡ ⚡ ⚡',move:'Donnerblitz!'},
- {name:'Bisaflor',id:3,fx:'🌿 🌸 🌿',move:'Blättersturm!'},
- {name:'Dragoran',id:149,fx:'✨ 🌀 ✨',move:'Drachenwirbel!'}
+ {name:'Mewtu',id:150,type:'psychic',move:'Psychokinese!'},
+ {name:'Glurak',id:6,type:'fire',move:'Feuersturm!'},
+ {name:'Turtok',id:9,type:'water',move:'Hydropumpe!'},
+ {name:'Raichu',id:26,type:'electric',move:'Donnerblitz!'},
+ {name:'Bisaflor',id:3,type:'leaf',move:'Blättersturm!'},
+ {name:'Dragoran',id:149,type:'dragon',move:'Drachenwirbel!'}
 ];
 let rewardOpen=false;
 function reward(kind,after){
@@ -83,18 +113,45 @@ function reward(kind,after){
  const p=random(special?SPECIAL_POKEMON:REWARD_POKEMON);
  const name=special?p.name:p[0],id=special?p.id:p[1];
  const shade=document.createElement('div');shade.className='reward-shade';shade.id='rewardOverlay';
- const box=document.createElement('div');box.className='reward-box';box.setAttribute('role','dialog');box.setAttribute('aria-modal','true');box.setAttribute('aria-label','Pokémon-Belohnung');
- const fx=special?p.fx:'⭐ ✨ ⭐';
- box.innerHTML=`<div class="reward-title">${special?'🏆 Großartig!':'🌟 Super gemacht!'}</div>
- <p class="sub">${special?esc(name)+' setzt '+esc(p.move)+' ein!':'Ein Pokémon freut sich mit dir!'}</p>
- <div style="position:relative"><div class="reward-fx">${fx}</div><img class="reward-art ${special?'special':''}"
- src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png"
- alt="${esc(name)}" onerror="this.style.display='none'"></div>
- <div style="font-size:22px;font-weight:900;color:#315b9a">${esc(name)}</div><div class="reward-actions"></div>`;
+ const box=document.createElement('div');box.className='reward-box'+(special?' is-special':'');
+ box.setAttribute('role','dialog');box.setAttribute('aria-modal','true');box.setAttribute('aria-label','Pokémon-Belohnung');
+ if(special){
+  box.innerHTML=`<div class="reward-title">🏆 Fantastisch!</div>
+  <p class="sub">Du hast einen ganzen Pokémon-Namen geschrieben!</p>
+  <div class="attack-stage" data-type="${p.type}" id="attackStage">
+    <span class="attack-ring"></span><span class="attack-ring second"></span>
+    <img class="attack-mon" src="${imageUrl([name,id])}" alt="${esc(name)}" onerror="this.style.display='none'">
+  </div><div class="attack-name">${esc(name)}: ${esc(p.move)}</div>
+  <div class="reward-actions"></div>`;
+  const stage=box.querySelector('.attack-stage');
+  // Reproduzierbare Verteilung, keine Bilder oder zusätzliche Downloads nötig.
+  for(let i=0;i<28;i++){
+   const angle=(i*137.508+12)*Math.PI/180;
+   const distance=95+(i%5)*31;
+   const part=document.createElement('span');
+   part.className='attack-particle';
+   part.style.setProperty('--dx',Math.round(Math.cos(angle)*distance)+'px');
+   part.style.setProperty('--dy',Math.round(Math.sin(angle)*distance*.74)+'px');
+   part.style.setProperty('--sz',(7+(i%4)*5)+'px');
+   part.style.setProperty('--dur',(1.8+(i%4)*.3)+'s');
+   part.style.setProperty('--delay',(-i*.17)+'s');
+   stage.append(part);
+  }
+  box.querySelector('.reward-actions').append(btn('↻ Attacke nochmal!',()=>{
+   // Nur die Animation neu starten; Belohnung und Weiter-Button bleiben sichtbar.
+   const clone=stage.cloneNode(true);stage.replaceWith(clone);
+  },'attack-replay'));
+ }else{
+  box.innerHTML=`<div class="reward-title">🌟 Super gemacht!</div>
+  <p class="sub">Ein Pokémon freut sich mit dir!</p>
+  <div style="position:relative"><div class="reward-fx">⭐ ✨ ⭐</div>
+  <img class="reward-art" src="${imageUrl([name,id])}" alt="${esc(name)}" onerror="this.style.display='none'"></div>
+  <div style="font-size:22px;font-weight:900;color:#315b9a">${esc(name)}</div>
+  <div class="reward-actions"></div>`;
+ }
  const continueBtn=btn('▶ Weiter!',()=>{shade.remove();rewardOpen=false;if(typeof after==='function')after()},'primary');
  box.querySelector('.reward-actions').append(continueBtn);
- shade.append(box);document.body.append(shade);
- continueBtn.focus();
+ shade.append(box);document.body.append(shade);continueBtn.focus();
 }
 
 function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein großes Schreibabenteuer</div><h1 class="title">Finde Pokémon. Lerne schreiben!</h1><p class="sub">Entdecke 76 Pokémon, lerne ihre Namen schreiben und lesen.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="start"><div style="font-size:38px">🧩 ✏️</div><strong>Pokémon schreiben</strong><span>Buchstaben legen · Nachspuren · Frei schreiben</span></div><div class="modecard" id="read"><div style="font-size:38px">📖 🔎</div><strong>Pokémon lesen</strong><span>Lies den Namen und finde das passende Bild</span></div><div class="modecard" id="letters"><div style="font-size:38px">✏️ 💃</div><strong>Buchstaben üben</strong><span>59 Buchstaben nachspuren · Tanzende Pokémon als Belohnung</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
