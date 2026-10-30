@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.0 · Spezialattacken</title>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.1 · Leseabenteuer</title>
 <style>
 :root{font-family:"Chalkboard SE","Comic Sans MS",ui-rounded,system-ui,-apple-system,sans-serif;color:#223a56;background:#eaf4ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff9ce,transparent 37%),linear-gradient(145deg,#e5f7ed,#e9f3ff 68%,#fcecff)}button{font:inherit;font-weight:800;border:0;border-radius:16px;padding:12px 18px;min-height:49px;background:#fff;color:#254363;box-shadow:0 3px 0 #bed0dd;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(2px);box-shadow:0 1px 0 #bed0dd}button:disabled{opacity:.42;transform:none;cursor:default}.primary{background:#ffcc43;box-shadow:0 4px 0 #e5a927}.blue{background:#4c80e5;color:#fff;box-shadow:0 4px 0 #3156a5}.green{background:#39b887;color:white;box-shadow:0 4px 0 #239268}.muted{background:#eaf0f8;box-shadow:0 3px 0 #cbd6e5}.shell{max-width:1250px;margin:auto;padding:16px clamp(10px,2.4vw,24px) 35px}.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.logo{font-weight:950;font-size:clamp(22px,3.5vw,34px);letter-spacing:-.8px;color:#2a61b2}.version{font-size:12px;color:#66829b;margin-left:8px}.score{border-radius:40px;background:white;padding:10px 17px;font-weight:850;box-shadow:0 3px 12px #28456913}.panel{border:3px solid #fff;background:#ffffffed;border-radius:30px;padding:clamp(14px,2.8vw,30px);box-shadow:0 12px 38px #23456619;text-align:center}.eyebrow{color:#5170a0;font-weight:850;letter-spacing:.5px;font-size:14px;text-transform:uppercase}.title{font-size:clamp(25px,4vw,39px);font-weight:950;line-height:1.15;margin:8px 0}.sub{color:#5e7389;margin:7px auto 17px;font-size:clamp(15px,1.7vw,18px);max-width:760px}.steps{display:flex;gap:7px;justify-content:center;align-items:center;margin:10px auto 18px}.step{padding:8px 13px;border-radius:25px;background:#e8edf6;color:#667c9a;font-size:13px;font-weight:900}.step.on{background:#ffe19a;color:#8b5a00}.step.done{background:#d7f5e8;color:#217753}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin:16px 0 4px}.pokemonWrap{position:relative;display:grid;place-items:center;min-height:220px;max-width:390px;margin:0 auto 4px;background:radial-gradient(ellipse at center,#e2f5ff 0,#effaff 60%,transparent 70%);border-radius:50%}.pokemon{width:min(260px,55vw);height:225px;object-fit:contain;filter:drop-shadow(0 12px 6px #324b6825)}.fallback{font-size:76px;display:none}.pokename{font-size:clamp(30px,5vw,54px);font-weight:950;letter-spacing:1px;color:#315f9f;margin:12px 0}.slots{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:10px auto 18px}.slot{height:52px;min-width:clamp(29px,4.6vw,47px);border-bottom:4px solid #8cb1e4;font-size:clamp(23px,3.4vw,32px);font-weight:950;display:grid;place-items:center;color:#244a84}.tiles{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;max-width:790px;margin:14px auto}.tile{font-size:clamp(22px,3vw,30px);min-width:52px;padding:8px 12px;background:#f7d85e;box-shadow:0 4px 0 #d8b640}.tile.used{visibility:hidden}.tile .school-word{pointer-events:none}.slot .school-word{pointer-events:none}.message{min-height:29px;font-size:18px;font-weight:800;color:#386db3;margin:10px 0}.writing{margin:15px -5px 8px;overflow-x:auto;overflow-y:hidden;border:3px solid #d8e7f7;border-radius:20px;background:#fffefb;overscroll-behavior-x:contain}.board{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}.board.free{min-height:250px}.legend{font-size:14px;color:#637990;margin:8px auto;max-width:900px}.note{font-size:12px;color:#7990a5;margin-top:20px}.modecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:830px;margin:22px auto}.modecard{padding:24px 15px;min-height:150px;border:3px solid #d9e8f8;background:#f7fbff;border-radius:22px;text-align:center;cursor:pointer}.modecard strong{display:block;font-size:23px;margin:10px 0}.modecard span{font-size:15px;color:#647b96}.choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:620px;margin:14px auto}.choice{background:#f7fbff;border:3px solid #d9e7f6;border-radius:22px;min-height:170px;display:grid;place-items:center}.choice img{height:125px;max-width:100%;object-fit:contain}.choice.good{border-color:#39b887;background:#e8fff5}.choice.bad{border-color:#ed8383;background:#fff0f0}.mini{font-size:14px}.complete{font-size:75px;line-height:1.3}.hide{display:none!important}@media(max-width:620px){.shell{padding:9px 8px 24px}.panel{padding:13px 9px;border-radius:22px}.steps{gap:4px}.step{font-size:11px;padding:7px 9px}.tile{min-width:43px}.slot{height:45px}.modecards{grid-template-columns:1fr}.pokemonWrap{min-height:180px}.pokemon{height:185px}.choice{min-height:130px}.choice img{height:100px}}
 
@@ -52,7 +52,42 @@
 @keyframes attack-ring{0%{transform:translate(-50%,-50%) scale(.25);opacity:0}20%{opacity:.9}90%,100%{transform:translate(-50%,-50%) scale(3.1);opacity:0}}
 @keyframes attack-particle{0%{transform:translate(-50%,-50%) scale(.2) rotate(0);opacity:0}15%{opacity:1}75%{opacity:.9}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.3) rotate(280deg);opacity:0}}
 @media(prefers-reduced-motion:reduce){.attack-stage .attack-mon,.attack-stage .attack-ring,.attack-stage .attack-particle{animation:none}.attack-stage .attack-particle{display:none}}
-</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.0</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
+
+/* Level 4: Große Leseschrift, deutliche Silben, frei wählbare Schwierigkeit. */
+.story-top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:12px 0}
+.story-levels{display:flex;gap:7px;flex-wrap:wrap}
+.story-levels button{padding:9px 13px;min-height:42px;font-size:15px;background:#e9f2ff;border:2px solid transparent;box-shadow:none}
+.story-levels button.active{background:#cbe7ff;border-color:#408de4;color:#194d87}
+.story-help{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.story-help button{font-size:15px;padding:9px 12px;min-height:42px}
+.story-progress{font-size:16px;font-weight:850;color:#47749b;text-align:center;margin:8px 0}
+.story-sentence{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.17em .36em;padding:24px 14px;margin:16px auto;border:3px solid #c4dff9;border-radius:24px;background:#fffefa;max-width:100%;font-size:clamp(34px,5.2vw,55px);font-weight:800;line-height:1.38;letter-spacing:.012em;color:#1e3a58}
+.story-sentence.level-2{font-size:clamp(34px,4.7vw,48px)}
+.story-sentence.level-3{font-size:clamp(33px,4.1vw,44px)}
+.story-word{display:inline-flex;white-space:nowrap;align-items:baseline;cursor:pointer;border-radius:8px}
+.story-word:focus-visible{outline:3px solid #ffbf46}
+.story-word .syllable:nth-child(odd){color:#236bd0}
+.story-word .syllable:nth-child(even){color:#d44c3e}
+.story-sentence.no-colors .syllable{color:#1e3a58}
+.story-sentence .punct{color:#1e3a58}
+.story-choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:1000px;margin:12px auto}
+.story-scene{display:block;width:100%;aspect-ratio:1.55;overflow:hidden;border-radius:19px;background:#e8f4ff}
+.story-scene svg{display:block;width:100%;height:100%}
+.story-scene img{display:block;width:100%;height:100%;object-fit:cover}
+.story-choice{border:4px solid #d8e7f7;background:#fff;padding:8px;border-radius:24px;min-width:0;min-height:0;box-shadow:0 6px 0 #c9d9ed;transition:transform .15s,border-color .15s}
+.story-choice:active{transform:scale(.98)}
+.story-choice.good{border-color:#49b37a;background:#eaffef}
+.story-choice.bad{border-color:#e6a0a0;background:#fff1f1}
+.story-choice:disabled{opacity:1}
+.story-choice-label{font-size:18px;font-weight:900;color:#345f91;padding:8px 0 3px}
+.story-foot{font-size:15px;color:#607b97;text-align:center;margin:8px 0}
+.story-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.story-actions button{font-size:15px}
+.story-level-up{max-width:640px;margin:16px auto;padding:20px;border:3px solid #f2d98a;border-radius:24px;background:#fff8db;text-align:center}
+.story-level-up h2{margin:5px 0 10px;color:#856221}
+.story-level-up .story-actions{margin-top:18px}
+@media(max-width:620px){.story-choicegrid{gap:8px}.story-choice{padding:4px;border-width:3px;border-radius:15px}.story-scene{border-radius:10px}.story-sentence{padding:18px 8px;font-size:clamp(31px,7.5vw,43px)}.story-sentence.level-2,.story-sentence.level-3{font-size:clamp(29px,6.6vw,39px)}.story-choice-label{font-size:15px}}
+</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.2 · Bildedition</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
 <script>
 'use strict';
 // POKÉMON-INDEX: Diese Liste steuert sowohl Namen-Schreiben als auch Namen-Lesen.
@@ -106,7 +141,7 @@ const SPECIAL_POKEMON=[
  {name:'Dragoran',id:149,type:'dragon',move:'Drachenwirbel!'}
 ];
 let rewardOpen=false;
-function reward(kind,after){
+function reward(kind,after,context='writing'){
  if(rewardOpen)return;
  rewardOpen=true;
  const special=kind==='special';
@@ -117,7 +152,7 @@ function reward(kind,after){
  box.setAttribute('role','dialog');box.setAttribute('aria-modal','true');box.setAttribute('aria-label','Pokémon-Belohnung');
  if(special){
   box.innerHTML=`<div class="reward-title">🏆 Fantastisch!</div>
-  <p class="sub">Du hast einen ganzen Pokémon-Namen geschrieben!</p>
+  <p class="sub">${context==='reading'?'Du hast fünf Lesesätze geschafft!':'Du hast einen ganzen Pokémon-Namen geschrieben!'}</p>
   <div class="attack-stage" data-type="${p.type}" id="attackStage">
     <span class="attack-ring"></span><span class="attack-ring second"></span>
     <img class="attack-mon" src="${imageUrl([name,id])}" alt="${esc(name)}" onerror="this.style.display='none'">
@@ -154,10 +189,142 @@ function reward(kind,after){
  shade.append(box);document.body.append(shade);continueBtn.focus();
 }
 
-function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein großes Schreibabenteuer</div><h1 class="title">Finde Pokémon. Lerne schreiben!</h1><p class="sub">Entdecke 76 Pokémon, lerne ihre Namen schreiben und lesen.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="start"><div style="font-size:38px">🧩 ✏️</div><strong>Pokémon schreiben</strong><span>Buchstaben legen · Nachspuren · Frei schreiben</span></div><div class="modecard" id="read"><div style="font-size:38px">📖 🔎</div><strong>Pokémon lesen</strong><span>Lies den Namen und finde das passende Bild</span></div><div class="modecard" id="letters"><div style="font-size:38px">✏️ 💃</div><strong>Buchstaben üben</strong><span>59 Buchstaben nachspuren · Tanzende Pokémon als Belohnung</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
+function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein großes Schreibabenteuer</div><h1 class="title">Finde Pokémon. Lerne schreiben!</h1><p class="sub">Entdecke 76 Pokémon, lerne ihre Namen schreiben und lesen.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="start"><div style="font-size:38px">🧩 ✏️</div><strong>Pokémon schreiben</strong><span>Buchstaben legen · Nachspuren · Frei schreiben</span></div><div class="modecard" id="read"><div style="font-size:38px">📖 🔎</div><strong>Pokémon lesen</strong><span>Lies den Namen und finde das passende Bild</span></div><div class="modecard" id="letters"><div style="font-size:38px">✏️ 💃</div><strong>Buchstaben üben</strong><span>59 Buchstaben nachspuren · Tanzende Pokémon als Belohnung</span></div><div class="modecard" id="stories"><div style="font-size:38px">📚 🌈</div><strong>Level 4: Leseabenteuer</strong><span>Große Sätze mit Silbenfarben · 2 Bilder · 3 Schwierigkeitsstufen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
 <div>⭐ <b>Kleine Belohnung:</b> Nach einem richtig gelegten Namen, einem vollständig nachgespurten Namen oder einer richtig gelösten Leserunde.</div>
 <div>🏆 <b>Besonderes Pokémon mit Attacke:</b> Wenn ein ganzer Pokémon-Name nach dem Abschreiben auch frei geschrieben und mit „Fertig!“ abgeschlossen wurde.</div>
-<div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home')}
+<div>📚 <b>Level 4:</b> Jeder richtig gelesene Satz gibt einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart}
+
+// LEVEL 4: Handgeprüfte Silben sind mit | getrennt. Gleiche Pokémon in beiden Bildern:
+// Die Lösung ergibt sich aus der Handlung oder Position, nicht allein aus dem Namen.
+// level: 1 leicht, 2 mittel, 3 schwer; answer: 0=linkes Motiv, 1=rechtes Motiv.
+const STORY_TASKS=[{"level":1,"words":["Pi|ka|chu","schläft."],"say":"Pikachu schläft.","a":"bilder/level4/01_pikachu_schlaf_wach_links.jpg","b":"bilder/level4/01_pikachu_schlaf_wach_rechts.jpg"},{"level":1,"words":["Pi|ka|chu","ist","wach."],"say":"Pikachu ist wach.","a":"bilder/level4/01_pikachu_schlaf_wach_rechts.jpg","b":"bilder/level4/01_pikachu_schlaf_wach_links.jpg"},{"level":2,"words":["Bi|sa|sam","steht","vor","dem","Baum."],"say":"Bisasam steht vor dem Baum.","a":"bilder/level4/02_bisasam_baum_links.jpg","b":"bilder/level4/02_bisasam_baum_rechts.jpg"},{"level":2,"words":["Bi|sa|sam","steht","hin|ter","dem","Baum."],"say":"Bisasam steht hinter dem Baum.","a":"bilder/level4/02_bisasam_baum_rechts.jpg","b":"bilder/level4/02_bisasam_baum_links.jpg"},{"level":2,"words":["Schig|gy","spielt","mit","dem","Ball."],"say":"Schiggy spielt mit dem Ball.","a":"bilder/level4/03_schiggy_ball_links.jpg","b":"bilder/level4/03_schiggy_ball_rechts.jpg"},{"level":2,"words":["Schig|gy","sitzt","ne|ben","dem","Ball."],"say":"Schiggy sitzt neben dem Ball.","a":"bilder/level4/03_schiggy_ball_rechts.jpg","b":"bilder/level4/03_schiggy_ball_links.jpg"},{"level":2,"words":["Glu|man|da","läuft","zum","Ball."],"say":"Glumanda läuft zum Ball.","a":"bilder/level4/04_glumanda_beeren_ball_links.jpg","b":"bilder/level4/04_glumanda_beeren_ball_rechts.jpg"},{"level":2,"words":["Glu|man|da","pflückt","Beeren."],"say":"Glumanda pflückt Beeren.","a":"bilder/level4/04_glumanda_beeren_ball_rechts.jpg","b":"bilder/level4/04_glumanda_beeren_ball_links.jpg"},{"level":2,"words":["En|ton","gießt","die","Blu|men."],"say":"Enton gießt die Blumen.","a":"bilder/level4/05_enton_giessen_schlafen_links.jpg","b":"bilder/level4/05_enton_giessen_schlafen_rechts.jpg"},{"level":2,"words":["En|ton","schläft","un|ter","dem","Baum."],"say":"Enton schläft unter dem Baum.","a":"bilder/level4/05_enton_giessen_schlafen_rechts.jpg","b":"bilder/level4/05_enton_giessen_schlafen_links.jpg"},{"level":1,"words":["En|ton","wandert."],"say":"Enton wandert.","a":"bilder/level4/06_enton_wandern_picknick_links.jpg","b":"bilder/level4/06_enton_wandern_picknick_rechts.jpg"},{"level":1,"words":["En|ton","isst","Me|lo|ne."],"say":"Enton isst Melone.","a":"bilder/level4/06_enton_wandern_picknick_rechts.jpg","b":"bilder/level4/06_enton_wandern_picknick_links.jpg"},{"level":2,"words":["Mau|zi","sitzt","un|ter","der","Bank."],"say":"Mauzi sitzt unter der Bank.","a":"bilder/level4/07_mauzi_bank_links.jpg","b":"bilder/level4/07_mauzi_bank_rechts.jpg"},{"level":2,"words":["Mau|zi","sitzt","auf","der","Bank."],"say":"Mauzi sitzt auf der Bank.","a":"bilder/level4/07_mauzi_bank_rechts.jpg","b":"bilder/level4/07_mauzi_bank_links.jpg"},{"level":2,"words":["En|ton","pflanzt","eine","Blume."],"say":"Enton pflanzt eine Blume.","a":"bilder/level4/08_enton_pflanzen_haengematte_links.jpg","b":"bilder/level4/08_enton_pflanzen_haengematte_rechts.jpg"},{"level":2,"words":["En|ton","liegt","in","der","Hän|ge|mat|te."],"say":"Enton liegt in der Hängematte.","a":"bilder/level4/08_enton_pflanzen_haengematte_rechts.jpg","b":"bilder/level4/08_enton_pflanzen_haengematte_links.jpg"},{"level":3,"words":["Schig|gy","gibt","Pi|ka|chu","die","Schau|fel."],"say":"Schiggy gibt Pikachu die Schaufel.","a":"bilder/level4/09_schiggy_pikachu_schaufel_links.jpg","b":"bilder/level4/09_schiggy_pikachu_schaufel_rechts.jpg"},{"level":3,"words":["Pi|ka|chu","gibt","Schig|gy","die","Schau|fel."],"say":"Pikachu gibt Schiggy die Schaufel.","a":"bilder/level4/09_schiggy_pikachu_schaufel_rechts.jpg","b":"bilder/level4/09_schiggy_pikachu_schaufel_links.jpg"},{"level":2,"words":["Glu|man|da","steht","auf","dem","Stein."],"say":"Glumanda steht auf dem Stein.","a":"bilder/level4/10_glumanda_stein_links.jpg","b":"bilder/level4/10_glumanda_stein_rechts.jpg"},{"level":2,"words":["Glu|man|da","steht","ne|ben","dem","Stein."],"say":"Glumanda steht neben dem Stein.","a":"bilder/level4/10_glumanda_stein_rechts.jpg","b":"bilder/level4/10_glumanda_stein_links.jpg"},{"level":2,"words":["Schig|gy","spritzt","Was|ser."],"say":"Schiggy spritzt Wasser.","a":"bilder/level4/11_schiggy_wasser_seil_links.jpg","b":"bilder/level4/11_schiggy_wasser_seil_rechts.jpg"},{"level":2,"words":["Schig|gy","springt","Seil."],"say":"Schiggy springt Seil.","a":"bilder/level4/11_schiggy_wasser_seil_rechts.jpg","b":"bilder/level4/11_schiggy_wasser_seil_links.jpg"},{"level":2,"words":["En|ton","wäscht","den","Ball."],"say":"Enton wäscht den Ball.","a":"bilder/level4/12_enton_waschen_schmetterling_links.jpg","b":"bilder/level4/12_enton_waschen_schmetterling_rechts.jpg"},{"level":2,"words":["En|ton","jagt","Schmet|ter|lin|ge."],"say":"Enton jagt Schmetterlinge.","a":"bilder/level4/12_enton_waschen_schmetterling_rechts.jpg","b":"bilder/level4/12_enton_waschen_schmetterling_links.jpg"},{"level":3,"words":["Schig|gy","gibt","Bi|sa|sam","den","Ball."],"say":"Schiggy gibt Bisasam den Ball.","a":"bilder/level4/13_schiggy_bisasam_ball_links.jpg","b":"bilder/level4/13_schiggy_bisasam_ball_rechts.jpg"},{"level":3,"words":["Bi|sa|sam","gibt","Schig|gy","den","Ball."],"say":"Bisasam gibt Schiggy den Ball.","a":"bilder/level4/13_schiggy_bisasam_ball_rechts.jpg","b":"bilder/level4/13_schiggy_bisasam_ball_links.jpg"},{"level":3,"words":["Glu|man|da","gibt","Schig|gy","den","Ball."],"say":"Glumanda gibt Schiggy den Ball.","a":"bilder/level4/14_glumanda_schiggy_ball_links.jpg","b":"bilder/level4/14_glumanda_schiggy_ball_rechts.jpg"},{"level":3,"words":["Schig|gy","gibt","Glu|man|da","den","Ball."],"say":"Schiggy gibt Glumanda den Ball.","a":"bilder/level4/14_glumanda_schiggy_ball_rechts.jpg","b":"bilder/level4/14_glumanda_schiggy_ball_links.jpg"},{"level":2,"words":["Schig|gy","spielt","Fußball."],"say":"Schiggy spielt Fußball.","a":"bilder/level4/15_schiggy_fussball_planschbecken_links.jpg","b":"bilder/level4/15_schiggy_fussball_planschbecken_rechts.jpg"},{"level":2,"words":["Schig|gy","rutscht","ins","Was|ser."],"say":"Schiggy rutscht ins Wasser.","a":"bilder/level4/15_schiggy_fussball_planschbecken_rechts.jpg","b":"bilder/level4/15_schiggy_fussball_planschbecken_links.jpg"},{"level":2,"words":["En|ton","spritzt","mit","dem","Schlauch."],"say":"Enton spritzt mit dem Schlauch.","a":"bilder/level4/16_enton_schlauch_teich_links.jpg","b":"bilder/level4/16_enton_schlauch_teich_rechts.jpg"},{"level":2,"words":["En|ton","berührt","das","Was|ser."],"say":"Enton berührt das Wasser.","a":"bilder/level4/16_enton_schlauch_teich_rechts.jpg","b":"bilder/level4/16_enton_schlauch_teich_links.jpg"}];
+const STORY_KEY='pokemonabc-story-level-v1',STORY_SYLLABLE_KEY='pokemonabc-story-syllables-v1';
+let storyLevel=Math.min(3,Math.max(1,Number(localStorage.getItem(STORY_KEY))||1));
+let storyColors=localStorage.getItem(STORY_SYLLABLE_KEY)!=='off';
+let storySolved=0,storyTask=null,storyAnswered=false,storyLast=-1;
+function storyStart(){stop();stage='story';storySolved=0;storyNext()}
+function storySetLevel(n){storyLevel=Math.max(1,Math.min(3,n));localStorage.setItem(STORY_KEY,String(storyLevel));storySolved=0;storyNext()}
+function storyToggleColors(){storyColors=!storyColors;localStorage.setItem(STORY_SYLLABLE_KEY,storyColors?'on':'off');const sentence=$('storySentence');if(sentence)sentence.classList.toggle('no-colors',!storyColors);const toggle=$('storyColors');if(toggle)toggle.textContent=storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}
+function storyNext(){
+ stop();stage='story';storyAnswered=false;
+ const pool=STORY_TASKS.filter(t=>t.level===storyLevel);
+ let idx=Math.floor(Math.random()*pool.length);if(pool.length>1&&idx===storyLast)idx=(idx+1)%pool.length;
+ storyLast=idx;storyTask=pool[idx];storyRender();
+}
+function storyWords(words){return words.map(w=>{
+ const punct=w.endsWith('.')?'.':'';
+ const core=punct?w.slice(0,-1):w;
+ return `<span class="story-word" tabindex="0" aria-label="${esc(core.replaceAll('|',''))}" title="Wort anhören" data-say="${esc(core.replaceAll('|',''))}">${core.split('|').map(t=>`<span class="syllable">${esc(t)}</span>`).join('')}${punct?'<span class="punct">.</span>':''}</span>`;
+ }).join(' ')}
+function storyRender(){
+ const t=storyTask;
+ // Die linke/rechte Position der passenden Szene wird pro Runde neu gemischt.
+ const variants=Math.random()<.5?[t.a,t.b]:[t.b,t.a];
+ const answer=variants.indexOf(t.a);
+ app.innerHTML=`<div class="eyebrow">📚 Level 4 · Pokémon-Leseabenteuer</div>
+ <h1 class="title">Lies den Satz!</h1>
+ <div class="story-top"><div class="story-levels" id="storyLevels"></div>
+ <div class="story-help"><button id="storyColors" class="muted">${storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}</button><button id="storyAudio" class="muted" aria-label="Satz vorlesen">🔊 Vorlesen</button></div></div>
+ <div class="story-progress">⭐ Satz ${storySolved+1} von 5 · ${['','Einfach','Mittel','Schwer'][storyLevel]}</div>
+ <div class="story-sentence level-${storyLevel} ${storyColors?'':'no-colors'}" id="storySentence" aria-label="${esc(t.say)}">${storyWords(t.words)}</div>
+ <p class="sub">Welches Bild passt zum Satz? Tippe auf das richtige Bild.</p>
+ <div class="story-choicegrid" id="storyChoices"></div>
+ <div class="message" id="message" aria-live="polite">Lies zuerst genau. Beide Bilder zeigen dieselben Pokémon!</div>
+ <div class="story-actions" id="storyActions"></div>`;
+ const levels=$('storyLevels');['🐣 Einfach','🌿 Mittel','🚀 Schwer'].forEach((label,i)=>{const b=btn(label,()=>storySetLevel(i+1));if(i+1===storyLevel)b.classList.add('active');levels.append(b)});
+ $('storyColors').onclick=storyToggleColors;
+ $('storyAudio').onclick=()=>speak(t.say);
+ app.querySelectorAll('.story-word').forEach(w=>{
+  w.addEventListener('click',()=>speak(w.dataset.say));
+  w.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();speak(w.dataset.say)}})
+ });
+ variants.forEach((variant,i)=>{
+  const b=document.createElement('button');b.className='story-choice';
+  b.setAttribute('aria-label','Bild '+(i===0?'A':'B'));
+  b.innerHTML=`<div class="story-scene"><img src="${variant}" alt="Bild ${i===0?'A':'B'}" loading="eager"></div><div class="story-choice-label">Bild ${i===0?'A':'B'}</div>`;
+  b.onclick=()=>storyChoose(i,answer,b);
+  $('storyChoices').append(b);
+ });
+ const actions=$('storyActions');
+ actions.append(btn('🐣 Leichter',()=>storySetLevel(storyLevel-1),'muted'),btn('⌂ Startseite',home,'muted'));
+ actions.firstChild.disabled=storyLevel===1;
+}
+function storyChoose(chosen,answer,button){
+ if(storyAnswered)return;
+ if(chosen!==answer){button.classList.add('bad');message('Schau noch einmal genau hin. Was passiert in dem Satz?');return}
+ storyAnswered=true;button.classList.add('good');score();storySolved++;
+ message('🌟 Richtig gelesen! Du bekommst einen Stern.');
+ app.querySelectorAll('.story-choice').forEach(b=>b.disabled=true);
+ if(storySolved===5){
+  reward('special',()=>storyLevelOffer(),'reading');
+ }else{
+  reward('small',()=>storyNext(),'reading');
+ }
+}
+function storyLevelOffer(){
+ stage='story-offer';
+ app.innerHTML=`<div class="eyebrow">📚 Level 4 · Leseabenteuer</div>
+ <div class="story-level-up"><div style="font-size:62px">🏆 🌟 🏆</div>
+ <h2>Fünf Sätze geschafft!</h2>
+ <p>Das war großartig! Möchtest du etwas Neues ausprobieren oder hier bleiben?</p>
+ <div class="story-actions" id="storyActions"></div></div>`;
+ const actions=$('storyActions');
+ if(storyLevel<3)actions.append(btn('🚀 Schwieriger!',()=>storySetLevel(storyLevel+1),'primary'));
+ actions.append(btn('😊 Hier bleiben',()=>{storySolved=0;storyNext()},'green'));
+ if(storyLevel>1)actions.append(btn('🐣 Leichter',()=>storySetLevel(storyLevel-1),'muted'));
+ actions.append(btn('⌂ Startseite',home,'muted'));
+}
+// Bildpaare sind echte, reproduzierbare SVG-Szenen mit Pokémon-Artwork.
+// Die beiden Varianten teilen Figuren und Kulisse; nur das gelesene Detail ändert sich.
+function storyScene(mons,type){
+ const id='sc'+Math.random().toString(36).slice(2,10);
+ const art=(n,x,y,w=110,extra='')=>`<image href="${imageUrl(['',n])}" x="${x}" y="${y}" width="${w}" height="${w}" preserveAspectRatio="xMidYMid meet" ${extra}/>`;
+ const ball=(x,y)=>`<circle cx="${x}" cy="${y}" r="19" fill="#fff" stroke="#27364f" stroke-width="3"/><path d="M${x-19} ${y}h38" stroke="#27364f" stroke-width="4"/><path d="M${x-19} ${y}a19 19 0 0 1 38 0" fill="#e84b4b"/><circle cx="${x}" cy="${y}" r="6" fill="#fff" stroke="#27364f" stroke-width="3"/>`;
+ const berry=(x,y)=>`<g><ellipse cx="${x}" cy="${y}" rx="14" ry="17" fill="#e93d66" stroke="#ac2551" stroke-width="2"/><path d="M${x} ${y-16}q-9-16-18-8q13-2 18 8q9-15 19-8q-12 1-19 8" fill="#45a24c"/></g>`;
+ const stone=(x=200,y=205)=>`<path d="M${x-64} ${y+23}l17-58 49-19 52 22 22 55z" fill="#a9b2c1" stroke="#77849a" stroke-width="4"/><path d="M${x-44} ${y-18}l45-18 26 8" stroke="#e6eaf1" stroke-width="5" fill="none"/>`;
+ const tree=(x=95)=>`<rect x="${x-10}" y="78" width="24" height="153" rx="8" fill="#a9774c"/><circle cx="${x}" cy="74" r="62" fill="#63bd72"/><circle cx="${x-37}" cy="85" r="43" fill="#7dd58b"/><circle cx="${x+33}" cy="77" r="47" fill="#55b66a"/>`;
+ const house=`<rect x="42" y="110" width="133" height="115" rx="5" fill="#f6c986" stroke="#b67d55" stroke-width="3"/><path d="M27 115L107 48l85 67" fill="#dc6e6e" stroke="#a74c4c" stroke-width="6"/><rect x="94" y="154" width="38" height="71" fill="#986746"/><rect x="55" y="138" width="27" height="28" fill="#a8e3ff" stroke="#fff" stroke-width="4"/>`;
+ const cloud=`<g fill="#fff"><ellipse cx="76" cy="53" rx="40" ry="16"/><circle cx="67" cy="42" r="20"/><circle cx="91" cy="45" r="22"/></g>`;
+ const sun=`<circle cx="315" cy="55" r="30" fill="#ffe46b"/><g stroke="#ffe46b" stroke-width="5" stroke-linecap="round"><path d="M315 10v10M315 90v10M270 55h10M350 55h10M284 24l7 7M339 79l7 7M284 86l7-7M339 31l7-7"/></g>`;
+ const flower=`<g transform="translate(302 209)"><path d="M0 0v26" stroke="#4b9c54" stroke-width="5"/><g fill="#f08bc3"><circle cx="-12" cy="-12" r="12"/><circle cx="12" cy="-12" r="12"/><circle cx="0" cy="-24" r="12"/><circle cx="0" cy="0" r="12"/></g><circle cx="0" cy="-12" r="10" fill="#ffdf68"/></g>`;
+ let scene='';const m=mons[0];
+ switch(type){
+  case 'sleep':scene=art(m,145,131,120)+`<g fill="#5078b8" font-size="26" font-weight="900"><text x="245" y="120">Z</text><text x="271" y="93">z</text><text x="289" y="69">z</text></g>`;break;
+  case 'awake':scene=art(m,145,112,120)+sun;break;
+  case 'run':scene=art(m,194,113,120)+`<g stroke="#6684ad" stroke-width="6" stroke-linecap="round"><path d="M100 172h80M123 195h54M139 219h40"/></g>`;break;
+  case 'stand':scene=art(m,145,116,120);break;
+  case 'jump':scene=art(m,145,25,120)+`<ellipse cx="203" cy="230" rx="55" ry="9" fill="#4c7c6680"/><path d="M260 180l18-19m-18 19l-2-23" stroke="#f7c743" stroke-width="7" stroke-linecap="round"/>`;break;
+  case 'eat':scene=art(m,130,117,120)+berry(250,187)+`<path d="M249 172q-10-21-29-20" fill="none" stroke="#de7790" stroke-width="4" stroke-dasharray="5 5"/>`;break;
+  case 'ball':scene=art(m,130,117,120)+ball(284,208);break;
+  case 'play':scene=art(m,145,105,125)+ball(291,200)+`<path d="M245 192q15-29 27-11" fill="none" stroke="#f3a64c" stroke-width="5" stroke-dasharray="8 6"/>`;break;
+  case 'flower':scene=art(m,145,113,125)+flower;break;
+  case 'tree-under':scene=tree(162)+art(m,121,118,114);break;
+  case 'tree-side':scene=tree(100)+art(m,250,118,110);break;
+  case 'stone-on':scene=stone(207,206)+art(m,155,62,110);break;
+  case 'stone-side':scene=stone(110,206)+art(m,235,113,110);break;
+  case 'stone-jump':scene=stone(205,205)+art(m,151,14,116)+`<path d="M270 150l20-22" stroke="#f3bc44" stroke-width="7" stroke-linecap="round"/>`;break;
+  case 'rain':scene=cloud+art(m,148,114,120)+`<g stroke="#58a8e8" stroke-width="5" stroke-linecap="round">${Array.from({length:17},(_,i)=>{const x=32+(i*41)%330,y=85+(i*29)%100;return `<path d="M${x} ${y}l-8 17"/>`}).join('')}</g>`;break;
+  case 'sun':scene=sun+art(m,145,116,120);break;
+  case 'house-front':scene=house+art(m,98,112,118);break;
+  case 'house-away':scene=house+art(m,262,116,110);break;
+  case 'give-right':scene=art(mons[0],60,108,115)+art(mons[1],249,108,115)+ball(237,185)+`<path d="M175 142h48m-13-12l13 12-13 12" fill="none" stroke="#f3ad46" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;break;
+  case 'give-left':scene=art(mons[0],60,108,115)+art(mons[1],249,108,115)+ball(184,185)+`<path d="M225 142h-40m13-12l-13 12 13 12" fill="none" stroke="#f3ad46" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;break;
+  case 'give-berry-right':scene=art(mons[0],60,108,115)+art(mons[1],249,108,115)+berry(237,190)+`<path d="M175 142h48m-13-12l13 12-13 12" fill="none" stroke="#f3ad46" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;break;
+  case 'give-berry-left':scene=art(mons[0],60,108,115)+art(mons[1],249,108,115)+berry(184,190)+`<path d="M225 142h-40m13-12l-13 12 13 12" fill="none" stroke="#f3ad46" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>`;break;
+  case 'pair-left':scene=art(mons[0],60,110,125)+art(mons[1],230,110,125);break;
+  case 'pair-right':scene=art(mons[1],60,110,125)+art(mons[0],230,110,125);break;
+  case 'berries-two':scene=art(m,117,110,130)+berry(270,199)+berry(316,199);break;
+  case 'berries-one':scene=art(m,117,110,130)+berry(293,199);break;
+ }
+ return `<svg viewBox="0 0 400 260" role="img" aria-label="Pokémon-Szene" xmlns="http://www.w3.org/2000/svg">
+ <defs><linearGradient id="sky-${id}" x2="0" y2="1"><stop stop-color="#c8edff"/><stop offset="1" stop-color="#effaff"/></linearGradient></defs>
+ <rect width="400" height="260" fill="url(#sky-${id})"/>
+ <path d="M0 205Q100 183 210 208T400 195V260H0Z" fill="#9ed9a2"/>
+ <path d="M0 233Q150 217 290 237T400 226V260H0Z" fill="#7fc78a"/>
+ <circle cx="359" cy="47" r="18" fill="#fff9c5" opacity=".7"/>
+ ${scene}</svg>`;
+}
+
 function startGame(){stop();stage='tiles';target=random(P.filter(p=>round===0||p!==target));round++;typed=[];const name=[...target[0]];const extras=shuffle('AEIOULRSTNMKPBFGD'.split('').filter(c=>!name.some(v=>v.toUpperCase()===c))).slice(0,Math.min(4,Math.max(2,Math.floor(name.length/3))));tiles=shuffle([...name,...extras].map((letter,i)=>({letter,id:i,used:false})));showTiles()}
 function showTiles(note=''){stage='tiles';app.innerHTML=`<div class="eyebrow">Pokémon entdecken</div><h1 class="title">Wie heißt dieses Pokémon?</h1>${progress(1)}${pokemonImg(target)}<p class="sub">Tippe die Buchstaben in der richtigen Reihenfolge an.</p><div class="slots" id="slots"></div><div class="tiles" id="tiles"></div><div class="message" id="message" aria-live="polite">${esc(note)}</div><div class="actions" id="actions"></div>`;const slots=$('slots');[...target[0]].forEach((c,i)=>{const s=document.createElement('div');s.className='slot';s.innerHTML=typed[i]?schoolSvg(typed[i].letter,37,45):'';slots.append(s)});tiles.forEach((t,i)=>{const b=btn(t.letter,()=>chooseTile(i),'tile');b.innerHTML=schoolSvg(t.letter,43,44);b.classList.toggle('used',t.used);b.setAttribute('aria-label',`Buchstabe ${t.letter}`);$('tiles').append(b)});controls(btn('🔊 Namen anhören',()=>speak(target[0]),'blue'),btn('↶ Buchstabe zurück',undo,'muted'),btn('⌂ Startseite',home,'muted'))}
 function chooseTile(i){const t=tiles[i];if(t.used)return;const wanted=[...target[0]][typed.length];if(t.letter.toLowerCase()!==wanted.toLowerCase()){message('Versuche einen anderen Buchstaben. Du schaffst das!');return}t.used=true;typed.push(t);if(typed.length===[...target[0]].length){showTiles('🌟 Richtig! Du hast den Namen zusammengesetzt!');controls(btn('✏️ Jetzt nachspuren',startTrace,'green'));speak(target[0]);reward('small')}else showTiles('Prima, weiter so!')}
