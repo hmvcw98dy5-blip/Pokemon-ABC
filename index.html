@@ -202,14 +202,48 @@ const STORY_KEY='pokemonabc-story-level-v1',STORY_SYLLABLE_KEY='pokemonabc-story
 let storyLevel=Math.min(3,Math.max(1,Number(localStorage.getItem(STORY_KEY))||1));
 let storyColors=localStorage.getItem(STORY_SYLLABLE_KEY)!=='off';
 let storySolved=0,storyTask=null,storyAnswered=false,storyLast=-1;
-function storyStart(){stop();stage='story';storySolved=0;storyNext()}
-function storySetLevel(n){storyLevel=Math.max(1,Math.min(3,n));localStorage.setItem(STORY_KEY,String(storyLevel));storySolved=0;storyNext()}
+// Remember recent scenes across rounds, including after a reward animation.
+let storyRecentImages=[],storyRecentSentences=[],storyRecentPairs=[];
+function storyGroup(t){
+ const name=t.say.split(' ')[0];
+ // Two-character action puzzles only mix with puzzles involving exactly the same cast.
+ if(t.say.includes('Pikachu')&&t.say.includes('Schiggy'))return 'Schiggy+Pikachu';
+ if(t.say.includes('Schiggy')&&t.say.includes('Bisasam'))return 'Schiggy+Bisasam';
+ if(t.say.includes('Schiggy')&&t.say.includes('Glumanda'))return 'Schiggy+Glumanda';
+ return name;
+}
+function storyRemember(list,value,max){list.push(value);while(list.length>max)list.shift()}
+function storyPairKey(a,b){return [a,b].sort().join('::')}
+function storyPick(){
+ const pool=STORY_TASKS.filter(t=>t.level===storyLevel);
+ if(!pool.length)return null;
+ // First try to avoid both recently seen sentences and recently seen pictures.
+ let candidates=pool.filter(t=>!storyRecentSentences.includes(t.say)&&!storyRecentImages.includes(t.a));
+ if(!candidates.length)candidates=pool.filter(t=>!storyRecentImages.includes(t.a));
+ if(!candidates.length)candidates=pool.filter(t=>!storyRecentSentences.includes(t.say));
+ if(!candidates.length)candidates=pool;
+ const t=candidates[Math.floor(Math.random()*candidates.length)];
+ const sameCast=STORY_TASKS.filter(x=>storyGroup(x)===storyGroup(t)&&x.a!==t.a);
+ // Prefer an image that was not recently shown and not paired with this answer recently.
+ const unused=sameCast.filter(x=>!storyRecentImages.includes(x.a)&&!storyRecentPairs.includes(storyPairKey(t.a,x.a)));
+ const notRecent=sameCast.filter(x=>!storyRecentImages.includes(x.a));
+ const notPaired=sameCast.filter(x=>!storyRecentPairs.includes(storyPairKey(t.a,x.a)));
+ const choices=unused.length?unused:notRecent.length?notRecent:notPaired.length?notPaired:sameCast;
+ const distractor=choices.length?choices[Math.floor(Math.random()*choices.length)]:null;
+ return {...t,b:distractor?distractor.a:t.b};
+}
+function storyStart(){stop();stage='story';storySolved=0;storyRecentImages=[];storyRecentSentences=[];storyRecentPairs=[];storyNext()}
+function storySetLevel(n){storyLevel=Math.max(1,Math.min(3,n));localStorage.setItem(STORY_KEY,String(storyLevel));storySolved=0;storyRecentImages=[];storyRecentSentences=[];storyRecentPairs=[];storyNext()}
 function storyToggleColors(){storyColors=!storyColors;localStorage.setItem(STORY_SYLLABLE_KEY,storyColors?'on':'off');const sentence=$('storySentence');if(sentence)sentence.classList.toggle('no-colors',!storyColors);const toggle=$('storyColors');if(toggle)toggle.textContent=storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}
 function storyNext(){
  stop();stage='story';storyAnswered=false;
- const pool=STORY_TASKS.filter(t=>t.level===storyLevel);
- let idx=Math.floor(Math.random()*pool.length);if(pool.length>1&&idx===storyLast)idx=(idx+1)%pool.length;
- storyLast=idx;storyTask=pool[idx];storyRender();
+ storyTask=storyPick();
+ if(!storyTask){home();return}
+ storyRemember(storyRecentImages,storyTask.a,4);
+ storyRemember(storyRecentImages,storyTask.b,4);
+ storyRemember(storyRecentSentences,storyTask.say,4);
+ storyRemember(storyRecentPairs,storyPairKey(storyTask.a,storyTask.b),8);
+ storyRender();
 }
 function storyWords(words){return words.map(w=>{
  const punct=w.endsWith('.')?'.':'';
