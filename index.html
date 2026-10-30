@@ -82,6 +82,14 @@
 .story-choice-label{font-size:18px;font-weight:900;color:#345f91;padding:8px 0 3px}
 .story-foot{font-size:15px;color:#607b97;text-align:center;margin:8px 0}
 .story-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.story-ready[hidden],.story-choicegrid[hidden],.story-countdown[hidden]{display:none!important}
+.story-ready{display:flex;justify-content:center;margin:16px auto 20px}
+.story-ready button{font-size:clamp(18px,2.7vw,24px);padding:16px 26px;min-height:66px;background:#218a62;color:white}
+.story-countdown{display:flex;align-items:center;justify-content:center;gap:12px;font-size:20px;font-weight:900;color:#285a88;margin:10px 0}
+.story-countdown strong{font-size:34px;min-width:1.7em;text-align:center;color:#126bb8}
+.story-countdown.urgent strong{color:#d84c3c}
+.story-time-setting{display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-size:14px;font-weight:700;color:#476582}
+.story-time-setting select{font-size:16px;padding:8px;border-radius:12px;border:2px solid #bcd8ed;background:#fff;color:#234a69}
 .story-actions button{font-size:15px}
 .story-level-up{max-width:640px;margin:16px auto;padding:20px;border:3px solid #f2d98a;border-radius:24px;background:#fff8db;text-align:center}
 .story-level-up h2{margin:5px 0 10px;color:#856221}
@@ -189,10 +197,10 @@ function reward(kind,after,context='writing'){
  shade.append(box);document.body.append(shade);continueBtn.focus();
 }
 
-function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein großes Schreibabenteuer</div><h1 class="title">Finde Pokémon. Lerne schreiben!</h1><p class="sub">Entdecke 76 Pokémon, lerne ihre Namen schreiben und lesen.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="start"><div style="font-size:38px">🧩 ✏️</div><strong>Pokémon schreiben</strong><span>Buchstaben legen · Nachspuren · Frei schreiben</span></div><div class="modecard" id="read"><div style="font-size:38px">📖 🔎</div><strong>Pokémon lesen</strong><span>Lies den Namen und finde das passende Bild</span></div><div class="modecard" id="letters"><div style="font-size:38px">✏️ 💃</div><strong>Buchstaben üben</strong><span>59 Buchstaben nachspuren · Tanzende Pokémon als Belohnung</span></div><div class="modecard" id="stories"><div style="font-size:38px">📚 🌈</div><strong>Level 4: Leseabenteuer</strong><span>Große Sätze mit Silbenfarben · 2 Bilder · 3 Schwierigkeitsstufen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
+function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein großes Schreibabenteuer</div><h1 class="title">Finde Pokémon. Lerne schreiben!</h1><p class="sub">Entdecke 76 Pokémon, lerne ihre Namen schreiben und lesen.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="start"><div style="font-size:38px">🧩 ✏️</div><strong>Pokémon schreiben</strong><span>Buchstaben legen · Nachspuren · Frei schreiben</span></div><div class="modecard" id="read"><div style="font-size:38px">📖 🔎</div><strong>Pokémon lesen</strong><span>Lies den Namen und finde das passende Bild</span></div><div class="modecard" id="letters"><div style="font-size:38px">✏️ 💃</div><strong>Buchstaben üben</strong><span>59 Buchstaben nachspuren · Tanzende Pokémon als Belohnung</span></div><div class="modecard" id="stories"><div style="font-size:38px">📚 🌈</div><strong>Level 4: Leseabenteuer</strong><span>Erst lesen, dann Bilder wählen · 8 Sekunden · 3 Schwierigkeitsstufen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
 <div>⭐ <b>Kleine Belohnung:</b> Nach einem richtig gelegten Namen, einem vollständig nachgespurten Namen oder einer richtig gelösten Leserunde.</div>
 <div>🏆 <b>Besonderes Pokémon mit Attacke:</b> Wenn ein ganzer Pokémon-Name nach dem Abschreiben auch frei geschrieben und mit „Fertig!“ abgeschlossen wurde.</div>
-<div>📚 <b>Level 4:</b> Jeder richtig gelesene Satz gibt einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart}
+<div>📚 <b>Level 4:</b> Nur beim ersten Versuch richtig gewählte Bilder geben einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart}
 
 // LEVEL 4: Handgeprüfte Silben sind mit | getrennt. Gleiche Pokémon in beiden Bildern:
 // Die Lösung ergibt sich aus der Handlung oder Position, nicht allein aus dem Namen.
@@ -202,6 +210,12 @@ const STORY_KEY='pokemonabc-story-level-v1',STORY_SYLLABLE_KEY='pokemonabc-story
 let storyLevel=Math.min(3,Math.max(1,Number(localStorage.getItem(STORY_KEY))||1));
 let storyColors=localStorage.getItem(STORY_SYLLABLE_KEY)!=='off';
 let storySolved=0,storyTask=null,storyAnswered=false,storyLast=-1;
+const STORY_TIME_KEY='pokemonabc-story-decision-seconds-v1';
+let storyDecisionSeconds=[5,8,10].includes(Number(localStorage.getItem(STORY_TIME_KEY)))?Number(localStorage.getItem(STORY_TIME_KEY)):8;
+let storyTimer=null,storyPhase='reading',storyDeadline=0,storyRoundId=0,storyVariants=[],storyAnswer=0;
+function storyStopTimer(){if(storyTimer!==null){clearInterval(storyTimer);storyTimer=null}}
+function storySetTime(n){storyDecisionSeconds=[5,8,10].includes(n)?n:8;localStorage.setItem(STORY_TIME_KEY,String(storyDecisionSeconds))}
+
 // Remember recent scenes across rounds, including after a reward animation.
 let storyRecentImages=[],storyRecentSentences=[],storyRecentPairs=[];
 function storyGroup(t){
@@ -233,10 +247,10 @@ function storyPick(){
  return {...t,b:distractor?distractor.a:t.b};
 }
 function storyStart(){stop();stage='story';storySolved=0;storyRecentImages=[];storyRecentSentences=[];storyRecentPairs=[];storyNext()}
-function storySetLevel(n){storyLevel=Math.max(1,Math.min(3,n));localStorage.setItem(STORY_KEY,String(storyLevel));storySolved=0;storyRecentImages=[];storyRecentSentences=[];storyRecentPairs=[];storyNext()}
+function storySetLevel(n){storyStopTimer();storyRoundId++;storyLevel=Math.max(1,Math.min(3,n));localStorage.setItem(STORY_KEY,String(storyLevel));storySolved=0;storyRecentImages=[];storyRecentSentences=[];storyRecentPairs=[];storyNext()}
 function storyToggleColors(){storyColors=!storyColors;localStorage.setItem(STORY_SYLLABLE_KEY,storyColors?'on':'off');const sentence=$('storySentence');if(sentence)sentence.classList.toggle('no-colors',!storyColors);const toggle=$('storyColors');if(toggle)toggle.textContent=storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}
 function storyNext(){
- stop();stage='story';storyAnswered=false;
+ storyStopTimer();stop();stage='story';storyAnswered=false;storyPhase='reading';storyRoundId++;
  storyTask=storyPick();
  if(!storyTask){home();return}
  storyRemember(storyRecentImages,storyTask.a,4);
@@ -252,48 +266,88 @@ function storyWords(words){return words.map(w=>{
  }).join(' ')}
 function storyRender(){
  const t=storyTask;
- // Die linke/rechte Position der passenden Szene wird pro Runde neu gemischt.
- const variants=Math.random()<.5?[t.a,t.b]:[t.b,t.a];
- const answer=variants.indexOf(t.a);
+ // Antworten werden für jede Runde neu angeordnet, aber vor der Lesephase noch nicht gezeigt.
+ storyVariants=Math.random()<.5?[t.a,t.b]:[t.b,t.a];
+ storyAnswer=storyVariants.indexOf(t.a);
  app.innerHTML=`<div class="eyebrow">📚 Level 4 · Pokémon-Leseabenteuer</div>
- <h1 class="title">Lies den Satz!</h1>
+ <h1 class="title">Erst lesen, dann entscheiden!</h1>
  <div class="story-top"><div class="story-levels" id="storyLevels"></div>
- <div class="story-help"><button id="storyColors" class="muted">${storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}</button><button id="storyAudio" class="muted" aria-label="Satz vorlesen">🔊 Vorlesen</button></div></div>
- <div class="story-progress">⭐ Satz ${storySolved+1} von 5 · ${['','Einfach','Mittel','Schwer'][storyLevel]}</div>
+ <div class="story-help"><button id="storyColors" class="muted">${storyColors?'🌈 Silbenfarben an':'⚪ Silbenfarben aus'}</button><button id="storyAudio" class="muted" aria-label="Satz vorlesen">🔊 Vorlesen</button></div>
+ <label class="story-time-setting" for="storyTime">⏱️ Bildzeit <select id="storyTime" aria-label="Zeit für die Bildauswahl"><option value="5">5 Sekunden</option><option value="8">8 Sekunden</option><option value="10">10 Sekunden</option></select></label></div>
+ <div class="story-progress">⭐ ${storySolved} von 5 Sternen · ${['','Einfach','Mittel','Schwer'][storyLevel]}</div>
  <div class="story-sentence level-${storyLevel} ${storyColors?'':'no-colors'}" id="storySentence" aria-label="${esc(t.say)}">${storyWords(t.words)}</div>
- <p class="sub">Welches Bild passt zum Satz? Tippe auf das richtige Bild.</p>
- <div class="story-choicegrid" id="storyChoices"></div>
- <div class="message" id="message" aria-live="polite">Lies zuerst genau. Beide Bilder zeigen dieselben Pokémon!</div>
+ <p class="sub" id="storyInstruction">Lies den Satz in Ruhe. Die Bilder kommen erst danach!</p>
+ <div class="story-ready" id="storyReady"><button id="storyReveal">📖 Ich habe gelesen! Bilder zeigen</button></div>
+ <div class="story-countdown" id="storyCountdown" hidden aria-live="off"><span>⏱️ Noch</span><strong id="storySeconds">${storyDecisionSeconds}</strong><span>Sekunden</span></div>
+ <div class="story-choicegrid" id="storyChoices" hidden></div>
+ <div class="message" id="message" aria-live="polite">Lies jedes Wort. Es gibt nur einen Versuch!</div>
  <div class="story-actions" id="storyActions"></div>`;
  const levels=$('storyLevels');['🐣 Einfach','🌿 Mittel','🚀 Schwer'].forEach((label,i)=>{const b=btn(label,()=>storySetLevel(i+1));if(i+1===storyLevel)b.classList.add('active');levels.append(b)});
  $('storyColors').onclick=storyToggleColors;
  $('storyAudio').onclick=()=>speak(t.say);
+ $('storyTime').value=String(storyDecisionSeconds);
+ $('storyTime').onchange=e=>storySetTime(Number(e.target.value));
+ $('storyReveal').onclick=storyReveal;
  app.querySelectorAll('.story-word').forEach(w=>{
   w.addEventListener('click',()=>speak(w.dataset.say));
   w.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();speak(w.dataset.say)}})
  });
- variants.forEach((variant,i)=>{
+ // Die Bilder werden im Hintergrund geladen, damit die 8 Sekunden erst bei sichtbaren Bildern beginnen.
+ storyVariants.forEach(src=>{const img=new Image();img.src=src});
+ const actions=$('storyActions');
+ actions.append(btn('🐣 Leichter',()=>storySetLevel(storyLevel-1),'muted'),btn('⌂ Startseite',()=>{storyStopTimer();home()},'muted'));
+ actions.firstChild.disabled=storyLevel===1;
+}
+function storyReveal(){
+ if(storyPhase!=='reading'||storyAnswered)return;
+ storyPhase='choosing';
+ $('storyReady').hidden=true;
+ $('storyTime').disabled=true;
+ $('storyInstruction').textContent='Welches Bild passt? Du hast nur einen Versuch.';
+ const grid=$('storyChoices');grid.replaceChildren();
+ storyVariants.forEach((variant,i)=>{
   const b=document.createElement('button');b.className='story-choice';
   b.setAttribute('aria-label','Bild '+(i===0?'A':'B'));
   b.innerHTML=`<div class="story-scene"><img src="${variant}" alt="Bild ${i===0?'A':'B'}" loading="eager"></div><div class="story-choice-label">Bild ${i===0?'A':'B'}</div>`;
-  b.onclick=()=>storyChoose(i,answer,b);
-  $('storyChoices').append(b);
+  b.onclick=()=>storyChoose(i,storyAnswer,b);
+  grid.append(b);
  });
- const actions=$('storyActions');
- actions.append(btn('🐣 Leichter',()=>storySetLevel(storyLevel-1),'muted'),btn('⌂ Startseite',home,'muted'));
- actions.firstChild.disabled=storyLevel===1;
+ grid.hidden=false;
+ $('storyCountdown').hidden=false;
+ const duration=storyDecisionSeconds;
+ storyDeadline=performance.now()+duration*1000;
+ const round=storyRoundId;
+ const tick=()=>{
+  if(round!==storyRoundId||storyPhase!=='choosing'){storyStopTimer();return}
+  const left=Math.max(0,Math.ceil((storyDeadline-performance.now())/1000));
+  const counter=$('storySeconds');if(counter)counter.textContent=String(left);
+  const wrap=$('storyCountdown');if(wrap)wrap.classList.toggle('urgent',left<=3);
+  if(performance.now()>=storyDeadline)storyFail('⏰ Die Zeit ist um. Diese Aufgabe gibt keinen Stern.');
+ };
+ storyStopTimer();storyTimer=setInterval(tick,100);tick();
+ message('Schau genau hin und wähle ein Bild.');
+}
+function storyFail(text,button){
+ if(storyAnswered||storyPhase!=='choosing')return;
+ storyAnswered=true;storyPhase='finished';storyStopTimer();
+ if(button)button.classList.add('bad');
+ app.querySelectorAll('.story-choice').forEach(b=>b.disabled=true);
+ $('storyCountdown').hidden=true;
+ $('storyInstruction').textContent='Beim nächsten Satz klappt es bestimmt!';
+ message(text);
+ $('storyActions').prepend(btn('➡️ Nächster Satz',storyNext,'green'));
 }
 function storyChoose(chosen,answer,button){
- if(storyAnswered)return;
- if(chosen!==answer){button.classList.add('bad');message('Schau noch einmal genau hin. Was passiert in dem Satz?');return}
- storyAnswered=true;button.classList.add('good');score();storySolved++;
+ if(storyAnswered||storyPhase!=='choosing')return;
+ if(performance.now()>=storyDeadline){storyFail('⏰ Die Zeit ist um. Diese Aufgabe gibt keinen Stern.');return}
+ if(chosen!==answer){storyFail('Noch nicht richtig. Für diese Aufgabe gibt es keinen Stern. Lies den nächsten Satz aufmerksam!',button);return}
+ storyAnswered=true;storyPhase='finished';storyStopTimer();
+ button.classList.add('good');score();storySolved++;
  message('🌟 Richtig gelesen! Du bekommst einen Stern.');
  app.querySelectorAll('.story-choice').forEach(b=>b.disabled=true);
- if(storySolved===5){
-  reward('special',()=>storyLevelOffer(),'reading');
- }else{
-  reward('small',()=>storyNext(),'reading');
- }
+ $('storyCountdown').hidden=true;
+ if(storySolved===5){reward('special',()=>storyLevelOffer(),'reading')}
+ else{reward('small',()=>storyNext(),'reading')}
 }
 function storyLevelOffer(){
  stage='story-offer';
@@ -435,7 +489,7 @@ function strokesFor(word){
  const origin=(boardW-chars.length*cell)/2+8;
  return wordGeometry(word,cell,origin,15,.66,.74);
 }
-function stop(){playing=false;if(animId!==null)cancelAnimationFrame(animId);animId=null;activeId=null}
+function stop(){storyStopTimer();playing=false;if(animId!==null)cancelAnimationFrame(animId);animId=null;activeId=null}
 function startTrace(){stop();stage='trace';traceStrokes=strokesFor(target[0]);strokeIndex=0;drawn=[];current=[];renderTrace()}
 function renderTrace(){app.innerHTML=`<div class="eyebrow">Jetzt wird geschrieben!</div><h1 class="title">Spure diesen Pokémon-Namen nach!</h1>${progress(2)}<div class="pokename">${schoolSvg(target[0],Math.min(850,[...target[0]].length*95),105)}</div><p class="sub">Folge den <b>nummerierten Startpunkten und Pfeilen</b>. Jeder Pfeil zeigt die Schreibrichtung.</p><div class="writing" id="writing"><svg class="board" id="board" viewBox="0 0 ${boardW} ${boardH}" aria-label="Schreibvorlage für ${esc(target[0])}"><g id="ruling"></g><g id="guides"></g><g id="finished"></g><g id="userdraw"></g><g id="markers"></g></svg></div><div class="message" id="message" aria-live="polite">Starte bei der gelben Nummer 1. Du kannst dir die Bewegung auch vormachen lassen.</div><div class="actions" id="actions"></div><div class="legend">Die Zahlen beginnen bei jedem neuen Buchstaben wieder bei 1. Der orangefarbene Pfeil zeigt den nächsten Strich.</div>`;drawRuling();paintTrace();bindTrace();controls(btn('▶ Vormachen',demo,'blue'),btn('↺ Noch einmal',startTrace,'muted'),btn('🔊 Anhören',()=>speak(target[0]),'muted'),btn('✏️ Buchstaben einzeln üben',()=>openLetterTrainer('trace'),'blue'),btn('➡ Namen abschreiben',startCopy,'green'));const next=$('actions').lastElementChild;next.disabled=strokeIndex<traceStrokes.length;next.id='toFree'}
 function drawRuling(){const g=$('ruling');for(const [y,col,dash] of [[63,'#b9d8ed',''],[145,'#c9e1ee','8 8'],[259,'#e8a6a6',''],[307,'#b9d8ed','8 8']])el('line',{x1:0,y1:y,x2:boardW,y2:y,stroke:col,'stroke-width':2,'stroke-dasharray':dash},g)}
