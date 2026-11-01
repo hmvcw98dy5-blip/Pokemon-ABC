@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.9 · Leseabenteuer</title>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.10 · Leseabenteuer</title>
 <style>
 :root{font-family:"Chalkboard SE","Comic Sans MS",ui-rounded,system-ui,-apple-system,sans-serif;color:#223a56;background:#eaf4ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff9ce,transparent 37%),linear-gradient(145deg,#e5f7ed,#e9f3ff 68%,#fcecff)}button{font:inherit;font-weight:800;border:0;border-radius:16px;padding:12px 18px;min-height:49px;background:#fff;color:#254363;box-shadow:0 3px 0 #bed0dd;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(2px);box-shadow:0 1px 0 #bed0dd}button:disabled{opacity:.42;transform:none;cursor:default}.primary{background:#ffcc43;box-shadow:0 4px 0 #e5a927}.blue{background:#4c80e5;color:#fff;box-shadow:0 4px 0 #3156a5}.green{background:#39b887;color:white;box-shadow:0 4px 0 #239268}.muted{background:#eaf0f8;box-shadow:0 3px 0 #cbd6e5}.shell{max-width:1250px;margin:auto;padding:16px clamp(10px,2.4vw,24px) 35px}.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.logo{font-weight:950;font-size:clamp(22px,3.5vw,34px);letter-spacing:-.8px;color:#2a61b2}.version{font-size:12px;color:#66829b;margin-left:8px}.score{border-radius:40px;background:white;padding:10px 17px;font-weight:850;box-shadow:0 3px 12px #28456913}.panel{border:3px solid #fff;background:#ffffffed;border-radius:30px;padding:clamp(14px,2.8vw,30px);box-shadow:0 12px 38px #23456619;text-align:center}.eyebrow{color:#5170a0;font-weight:850;letter-spacing:.5px;font-size:14px;text-transform:uppercase}.title{font-size:clamp(25px,4vw,39px);font-weight:950;line-height:1.15;margin:8px 0}.sub{color:#5e7389;margin:7px auto 17px;font-size:clamp(15px,1.7vw,18px);max-width:760px}.steps{display:flex;gap:7px;justify-content:center;align-items:center;margin:10px auto 18px}.step{padding:8px 13px;border-radius:25px;background:#e8edf6;color:#667c9a;font-size:13px;font-weight:900}.step.on{background:#ffe19a;color:#8b5a00}.step.done{background:#d7f5e8;color:#217753}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin:16px 0 4px}.pokemonWrap{position:relative;display:grid;place-items:center;min-height:220px;max-width:390px;margin:0 auto 4px;background:radial-gradient(ellipse at center,#e2f5ff 0,#effaff 60%,transparent 70%);border-radius:50%}.pokemon{width:min(260px,55vw);height:225px;object-fit:contain;filter:drop-shadow(0 12px 6px #324b6825)}.fallback{font-size:76px;display:none}.pokename{font-size:clamp(30px,5vw,54px);font-weight:950;letter-spacing:1px;color:#315f9f;margin:12px 0}.slots{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:10px auto 18px}.slot{height:52px;min-width:clamp(29px,4.6vw,47px);border-bottom:4px solid #8cb1e4;font-size:clamp(23px,3.4vw,32px);font-weight:950;display:grid;place-items:center;color:#244a84}.tiles{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;max-width:790px;margin:14px auto}.tile{font-size:clamp(22px,3vw,30px);min-width:52px;padding:8px 12px;background:#f7d85e;box-shadow:0 4px 0 #d8b640}.tile.used{visibility:hidden}.tile .school-word{pointer-events:none}.slot .school-word{pointer-events:none}.message{min-height:29px;font-size:18px;font-weight:800;color:#386db3;margin:10px 0}.writing{margin:15px -5px 8px;overflow-x:auto;overflow-y:hidden;border:3px solid #d8e7f7;border-radius:20px;background:#fffefb;overscroll-behavior-x:contain}.board{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}.board.free{min-height:250px}.legend{font-size:14px;color:#637990;margin:8px auto;max-width:900px}.note{font-size:12px;color:#7990a5;margin-top:20px}.modecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:830px;margin:22px auto}.modecard{padding:24px 15px;min-height:150px;border:3px solid #d9e8f8;background:#f7fbff;border-radius:22px;text-align:center;cursor:pointer}.modecard strong{display:block;font-size:23px;margin:10px 0}.modecard span{font-size:15px;color:#647b96}.choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:620px;margin:14px auto}.choice{background:#f7fbff;border:3px solid #d9e7f6;border-radius:22px;min-height:170px;display:grid;place-items:center}.choice img{height:125px;max-width:100%;object-fit:contain}.choice.good{border-color:#39b887;background:#e8fff5}.choice.bad{border-color:#ed8383;background:#fff0f0}.mini{font-size:14px}.complete{font-size:75px;line-height:1.3}.hide{display:none!important}@media(max-width:620px){.shell{padding:9px 8px 24px}.panel{padding:13px 9px;border-radius:22px}.steps{gap:4px}.step{font-size:11px;padding:7px 9px}.tile{min-width:43px}.slot{height:45px}.modecards{grid-template-columns:1fr}.pokemonWrap{min-height:180px}.pokemon{height:185px}.choice{min-height:130px}.choice img{height:100px}}
 
@@ -159,7 +159,49 @@
 .paint-parent .actions{margin:10px 0 0}
 .paint-stamp{font-size:13px;color:#71869d}
 @media(max-width:620px){.paint-swatch{width:39px;height:39px;min-height:39px}.paint-head{padding:12px;font-size:20px}}
-</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.9 · Leseabenteuer</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
+
+/* V1.10: Vier Zuordnungszeilen gleichzeitig sichtbar, auch auf dem iPad im Querformat. */
+.match-board{align-items:start;gap:clamp(7px,1.5vw,16px);margin:10px auto}
+.match-col{grid-template-rows:repeat(4,clamp(125px,17.5dvh,172px));gap:8px;min-height:0;min-width:0}
+.match-row{height:100%;min-height:0;min-width:0;overflow:hidden;border-radius:15px;padding:8px;box-shadow:0 2px 0 #cbd9ea}
+.match-row.sentence{font-size:clamp(16px,2.05vw,25px);line-height:1.25;gap:.08em .27em;align-content:center}
+.match-row.picture{position:relative;padding:5px;min-height:0}
+.match-row.picture img{position:absolute;inset:5px;width:calc(100% - 10px);height:calc(100% - 10px);max-height:100%;object-fit:contain;object-position:center;border-radius:10px}
+@media(max-width:620px){.match-col{grid-template-rows:repeat(4,clamp(105px,17dvh,155px));gap:6px}.match-row.sentence{font-size:clamp(14px,3.5vw,19px);padding:4px}.match-row.picture{padding:3px}.match-row.picture img{inset:3px;width:calc(100% - 6px);height:calc(100% - 6px)}}
+/* V1.10: Ein Fingertipp markiert nur; eine zweite bewusste Aktion bestätigt. */
+.reverse-choice.pending{border-color:#4285dd;background:#e8f2ff;box-shadow:0 3px 0 #aac7ea}
+.reverse-confirm-shade{position:fixed;inset:0;z-index:9000;background:#173453a6;display:grid;place-items:center;padding:16px;backdrop-filter:blur(3px)}
+.reverse-confirm-box{width:min(540px,95vw);background:#fff;border:4px solid #b6d9f5;border-radius:24px;padding:22px 18px;box-shadow:0 18px 60px #0a254e6b;text-align:center}
+.reverse-confirm-box h2{font-size:clamp(23px,3.3vw,30px);color:#28598d;margin:0 0 12px}
+.reverse-confirm-text{font-size:clamp(19px,2.7vw,26px);line-height:1.4;color:#244b78;font-weight:850;padding:12px 10px;background:#f1f7ff;border-radius:14px;margin:10px 0 18px}
+.reverse-confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.reverse-confirm-actions button{font-size:clamp(18px,2.7vw,24px);min-height:64px}
+.reverse-confirm-actions .confirm-yes{background:#35ac76;color:#fff}
+.reverse-confirm-actions .confirm-no{background:#e9eff6;color:#345a7e}
+
+/* V1.11 · Trainerreise */
+.score{cursor:pointer;display:flex;align-items:center;gap:7px;border:2px solid #ffe2a0;user-select:none}
+.score:focus-visible,.trainer-open:focus-visible{outline:4px solid #4c80e5;outline-offset:3px}
+.trainer-card{margin:18px auto 4px;max-width:850px;padding:17px 19px;border:3px solid #ffe0a2;border-radius:22px;background:linear-gradient(115deg,#fff9e7,#edf7ff);text-align:left}
+.trainer-card h2{margin:0 0 7px;font-size:clamp(21px,3vw,27px);color:#385a8b}
+.trainer-meter{height:17px;background:#e3e8ef;border-radius:20px;overflow:hidden;margin:9px 0 6px}
+.trainer-meter>div{height:100%;background:linear-gradient(90deg,#f7b83e,#f4db60);border-radius:20px;transition:width .25s}
+.trainer-open{background:#ffda79;margin-top:10px}
+.trainer-badges{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:15px 0}
+.trainer-badge{border:2px solid #d6e3f3;border-radius:18px;background:#f7faff;padding:14px 5px;text-align:center;min-width:0}
+.trainer-badge.unlocked{background:#fff6da;border-color:#e6bd60}
+.trainer-badge .badge-symbol{display:block;font-size:clamp(31px,5vw,48px);filter:grayscale(1);opacity:.42}
+.trainer-badge.unlocked .badge-symbol{filter:none;opacity:1}
+.trainer-badge strong{display:block;font-size:clamp(11px,1.6vw,15px);margin:4px 0;overflow-wrap:anywhere}
+.trainer-badge small{display:block;font-size:11px;color:#607b94}
+.trainer-overlay{position:fixed;inset:0;background:#132d50bd;z-index:10020;display:grid;place-items:center;padding:16px;backdrop-filter:blur(5px)}
+.trainer-dialog{width:min(680px,96vw);max-height:91dvh;overflow:auto;background:#fff;border:5px solid #fff3ce;border-radius:28px;padding:24px 18px;text-align:center;box-shadow:0 25px 80px #102e5570}
+.trainer-dialog h2{font-size:clamp(24px,4vw,36px);margin:4px 0 8px;color:#305b95}
+.trainer-dialog .badge-large{font-size:90px;line-height:1.2;animation:reward-bounce 1.5s infinite}
+.trainer-dialog .trainer-leader{font-size:21px;font-weight:850;color:#385d86;margin:10px 0}
+.trainer-dialog .actions{margin-top:18px}
+@media(max-width:560px){.trainer-badges{grid-template-columns:repeat(2,minmax(0,1fr))}.trainer-card{padding:13px}.trainer-dialog{padding:16px 10px}}
+</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.11 · Trainerreise</span></div><button class="score" id="trainerScore" type="button" title="Trainerpass öffnen">⭐ <span id="score">0</span> Sterne · 🏅</button></div><section class="panel" id="app"></section></main>
 <script>
 'use strict';
 // POKÉMON-INDEX: Diese Liste steuert sowohl Namen-Schreiben als auch Namen-Lesen.
@@ -182,7 +224,62 @@ const P=[
  ['Pachirisu',417],['Plinfa',393],['Chelast',387],['Panflam',390]
 ];
 const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';const app=$('app');
-let stars=Number(localStorage.getItem('pokemonabc-v06-stars')||0);$('score').textContent=stars;
+// Eigene Sternzählung für die neue Trainerreise. Historische Sternstände und
+// alle bisherigen Belohnungs-/Übungsdaten bleiben im localStorage unangetastet.
+const TRAINER_STARS_KEY='pokemonabc-trainer-journey-v1-stars';
+let stars=Math.max(0,Number(localStorage.getItem(TRAINER_STARS_KEY)||0)||0);
+$('score').textContent=stars;
+const ARENAS=[
+ {at:50,badge:'Felsorden',leader:'Rocko',symbol:'🪨',place:'Marmoria City'},
+ {at:100,badge:'Quellorden',leader:'Misty',symbol:'💧',place:'Azuria City'},
+ {at:150,badge:'Donnerorden',leader:'Major Bob',symbol:'⚡',place:'Orania City'},
+ {at:200,badge:'Farborden',leader:'Erika',symbol:'🌸',place:'Prismania City'},
+ {at:250,badge:'Seelenorden',leader:'Koga',symbol:'🥷',place:'Fuchsania City'},
+ {at:300,badge:'Sumpforden',leader:'Sabrina',symbol:'🔮',place:'Saffronia City'},
+ {at:350,badge:'Vulkanorden',leader:'Pyro',symbol:'🔥',place:'Zinnoberinsel'},
+ {at:400,badge:'Erdorden',leader:'Giovanni',symbol:'🌍',place:'Vertania City'}
+];
+let pendingArena=[];
+function trainerProgress(){
+ const next=ARENAS.find(a=>stars<a.at),previous=next?next.at-50:400;
+ const portion=next?stars-previous:50;
+ return {next,previous,portion,percent:next?Math.max(0,Math.min(100,portion/50*100)):100};
+}
+function trainerSummary(){
+ const p=trainerProgress();
+ return `<div class="trainer-card"><h2>🏅 Meine Pokémon-Trainerreise</h2>
+ <div><strong>⭐ ${stars} Sterne</strong> · ${ARENAS.filter(a=>stars>=a.at).length} von 8 Arena-Orden</div>
+ <div class="trainer-meter" role="progressbar" aria-valuemin="0" aria-valuemax="50" aria-valuenow="${p.portion}"><div style="width:${p.percent}%"></div></div>
+ <div>${p.next?`Noch <strong>${p.next.at-stars} Sterne</strong> bis zum ${p.next.badge} bei ${p.next.leader}!`:'🏆 Alle acht Arena-Orden gesammelt! Du bist ein Pokémon-Champion!'}</div>
+ <button class="trainer-open" id="trainerOpen" type="button">🎖️ Meinen Trainerpass ansehen</button></div>`;
+}
+function trainerPass(){
+ const shade=document.createElement('div');shade.className='trainer-overlay';shade.id='trainerPassOverlay';
+ shade.innerHTML=`<section class="trainer-dialog" role="dialog" aria-modal="true" aria-label="Mein Trainerpass">
+ <div class="eyebrow">Pokémon-Trainerpass</div><h2>Meine Arena-Orden</h2>
+ <p>⭐ <strong>${stars} Sterne</strong> gesammelt · ${ARENAS.filter(a=>stars>=a.at).length} von 8 Orden</p>
+ <div class="trainer-badges">${ARENAS.map(a=>`<div class="trainer-badge ${stars>=a.at?'unlocked':''}"><span class="badge-symbol">${stars>=a.at?a.symbol:'🔒'}</span><strong>${a.badge}</strong><small>${a.leader} · ${a.at} ⭐</small></div>`).join('')}</div>
+ <p class="sub">Jeder gelöste Lernauftrag bringt dich dem nächsten Orden näher. Die Pokémon-Belohnungen gibt es weiterhin!</p>
+ <div class="actions"><button class="primary" id="trainerClose" type="button">▶ Weiterlernen</button></div></section>`;
+ document.body.append(shade);
+ shade.querySelector('#trainerClose').onclick=()=>shade.remove();
+ shade.querySelector('#trainerClose').focus();
+}
+function arenaCelebration(a){
+ const shade=document.createElement('div');shade.className='trainer-overlay';
+ shade.innerHTML=`<section class="trainer-dialog" role="dialog" aria-modal="true" aria-label="Neuer Arena-Orden">
+ <div class="eyebrow">🎉 Arena geschafft!</div><h2>Du hast den ${a.badge} gewonnen!</h2>
+ <div class="badge-large">${a.symbol}</div>
+ <div class="trainer-leader">Arena-Leiter ${a.leader} · ${a.place}</div>
+ <p class="sub">Fantastisch gelesen und geschrieben! Du hast ${a.at} Sterne gesammelt und deinen nächsten Arena-Orden verdient.</p>
+ <div class="actions"><button class="primary" id="arenaContinue" type="button">🏅 Orden in meinen Trainerpass legen</button></div></section>`;
+ document.body.append(shade);
+ shade.querySelector('#arenaContinue').onclick=()=>{shade.remove();trainerPass()};
+ shade.querySelector('#arenaContinue').focus();
+}
+function showPendingArena(){if(pendingArena.length){arenaCelebration(pendingArena.shift())}}
+$('trainerScore').addEventListener('click',trainerPass);
+
 let target=P[0],tiles=[],typed=[],stage='home',traceStrokes=[],strokeIndex=0,drawn=[],current=[],activeId=null,animId=null,playing=false,freePaths=[],freeCurrent=[],boardW=1000,boardH=320,freeWordShown=true,round=0,readTarget=null,readDone=false;
 const imageUrl=p=>`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${p[1]}.png`;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -191,7 +288,13 @@ function random(a){return a[Math.floor(Math.random()*a.length)]}function shuffle
 function btn(t,fn,cls=''){const b=document.createElement('button');b.textContent=t;b.className=cls;b.addEventListener('click',fn);return b}
 function el(tag,props={},parent){const x=document.createElementNS(NS,tag);Object.entries(props).forEach(([k,v])=>x.setAttribute(k,v));if(parent)parent.appendChild(x);return x}
 function controls(...b){const a=$('actions');b.forEach(x=>a.append(x))}function message(s){if($('message'))$('message').textContent=s}
-function score(){stars++;localStorage.setItem('pokemonabc-v06-stars',stars);$('score').textContent=stars}
+function score(){
+ const previous=stars;stars++;
+ localStorage.setItem(TRAINER_STARS_KEY,String(stars));
+ $('score').textContent=stars;
+ for(const a of ARENAS)if(previous<a.at&&stars>=a.at)pendingArena.push(a);
+ if(stage==='home')home();
+} 
 function progress(n){return `<div class="steps"><span class="step ${n===1?'on':n>1?'done':''}">1 · Entdecken</span><span class="step ${n===2?'on':n>2?'done':''}">2 · Nachspuren</span><span class="step ${n===3?'on':n>3?'done':''}">3 · Abschreiben</span><span class="step ${n===4?'on':n>4?'done':''}">4 · Frei schreiben</span></div>`}
 function pokemonImg(p){return `<div class="pokemonWrap"><img class="pokemon" alt="${esc(p[0])}" src="${imageUrl(p)}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="fallback" aria-hidden="true">❔</div></div>`}
 
@@ -256,15 +359,15 @@ function reward(kind,after,context='writing'){
   <div style="font-size:22px;font-weight:900;color:#315b9a">${esc(name)}</div>
   <div class="reward-actions"></div>`;
  }
- const continueBtn=btn('▶ Weiter!',()=>{shade.remove();rewardOpen=false;if(typeof after==='function')after()},'primary');
+ const continueBtn=btn('▶ Weiter!',()=>{shade.remove();rewardOpen=false;if(typeof after==='function')after();showPendingArena()},'primary');
  box.querySelector('.reward-actions').append(continueBtn);
  shade.append(box);document.body.append(shade);continueBtn.focus();
 }
 
-function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein Pokémon-Lernabenteuer</div><h1 class="title">Lesen und Schreiben lernen!</h1><p class="sub">Vom ersten Buchstaben bis zum ganzen Satz. Wähle aus, was du heute üben möchtest.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="letters" role="button" tabindex="0"><div class="mode-number">1</div><div class="mode-emoji">✏️</div><strong>Buchstaben schreiben</strong><span>Buchstaben nachspuren und üben</span></div><div class="modecard" id="read" role="button" tabindex="0"><div class="mode-number">2</div><div class="mode-emoji">👀</div><strong>Pokémon-Namen lesen</strong><span>Namen lesen und Pokémon erkennen</span></div><div class="modecard" id="start" role="button" tabindex="0"><div class="mode-number">3</div><div class="mode-emoji">📝</div><strong>Pokémon-Namen schreiben</strong><span>Buchstaben legen, Namen nachspuren und selbst schreiben</span></div><div class="modecard" id="stories" role="button" tabindex="0"><div class="mode-number">4</div><div class="mode-emoji">📖</div><strong>Sätze lesen</strong><span>Erst lesen, dann das passende Bild finden</span></div><div class="modecard" id="matching" role="button" tabindex="0"><div class="mode-number">5</div><div class="mode-emoji">🧩</div><strong>Sätze zuordnen</strong><span>Vier Sätze genau lesen und Bilder verbinden</span></div><div class="modecard" id="reverse" role="button" tabindex="0"><div class="mode-number">6</div><div class="mode-emoji">🔎</div><strong>Welcher Satz passt?</strong><span>Ein Bild ansehen und den richtigen Satz lesen</span></div><div class="modecard" id="paint" role="button" tabindex="0"><div class="mode-number">7</div><div class="mode-emoji">🎨</div><strong>Lesen und malen</strong><span>Eine Anweisung lesen und ins Bild zeichnen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
+function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein Pokémon-Lernabenteuer</div><h1 class="title">Lesen und Schreiben lernen!</h1><p class="sub">Vom ersten Buchstaben bis zum ganzen Satz. Wähle aus, was du heute üben möchtest.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="letters" role="button" tabindex="0"><div class="mode-number">1</div><div class="mode-emoji">✏️</div><strong>Buchstaben schreiben</strong><span>Buchstaben nachspuren und üben</span></div><div class="modecard" id="read" role="button" tabindex="0"><div class="mode-number">2</div><div class="mode-emoji">👀</div><strong>Pokémon-Namen lesen</strong><span>Namen lesen und Pokémon erkennen</span></div><div class="modecard" id="start" role="button" tabindex="0"><div class="mode-number">3</div><div class="mode-emoji">📝</div><strong>Pokémon-Namen schreiben</strong><span>Buchstaben legen, Namen nachspuren und selbst schreiben</span></div><div class="modecard" id="stories" role="button" tabindex="0"><div class="mode-number">4</div><div class="mode-emoji">📖</div><strong>Sätze lesen</strong><span>Erst lesen, dann das passende Bild finden</span></div><div class="modecard" id="matching" role="button" tabindex="0"><div class="mode-number">5</div><div class="mode-emoji">🧩</div><strong>Sätze zuordnen</strong><span>Vier Sätze genau lesen und Bilder verbinden</span></div><div class="modecard" id="reverse" role="button" tabindex="0"><div class="mode-number">6</div><div class="mode-emoji">🔎</div><strong>Welcher Satz passt?</strong><span>Ein Bild ansehen und den richtigen Satz lesen</span></div><div class="modecard" id="paint" role="button" tabindex="0"><div class="mode-number">7</div><div class="mode-emoji">🎨</div><strong>Lesen und malen</strong><span>Eine Anweisung lesen und ins Bild zeichnen</span></div></div>${trainerSummary()}<div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
 <div>⭐ <b>Kleine Belohnung:</b> Nach einem richtig gelegten Namen, einem vollständig nachgespurten Namen oder einer richtig gelösten Leserunde.</div>
 <div>🏆 <b>Besonderes Pokémon mit Attacke:</b> Wenn ein ganzer Pokémon-Name nach dem Abschreiben auch frei geschrieben und mit „Fertig!“ abgeschlossen wurde.</div>
-<div>📖 <b>Sätze lesen:</b> Nur beim ersten Versuch richtig gewählte Bilder geben einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>🧩 <b>Sätze zuordnen:</b> Vier passende Bildpaare ergeben eine Runde. Nur fehlerfreie Runden bringen einen Stern. Nach fünf fehlerfreien Runden kommt eine Spezialattacke.</div><div>🔎 <b>Welcher Satz passt?:</b> Ein Bild und vier Sätze. Für die erste richtige Antwort gibt es einen Stern; nach fünf Sternen eine Spezialattacke.</div><div>🎨 <b>Lesen und malen:</b> Lies den Auftrag und male direkt ins Bild. Ein Erwachsener schaut mit dir nach; nach fünf bestätigten Aufgaben gibt es eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart;$('matching').onclick=matchStart;$('reverse').onclick=reverseStart;$('paint').onclick=paintStart;for(const id of ['start','read','letters','stories','matching','reverse','paint']){$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click()}}}}
+<div>📖 <b>Sätze lesen:</b> Nur beim ersten Versuch richtig gewählte Bilder geben einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>🧩 <b>Sätze zuordnen:</b> Vier passende Bildpaare ergeben eine Runde. Nur fehlerfreie Runden bringen einen Stern. Nach fünf fehlerfreien Runden kommt eine Spezialattacke.</div><div>🔎 <b>Welcher Satz passt?:</b> Ein Bild und vier Sätze. Für die erste richtige Antwort gibt es einen Stern; nach fünf Sternen eine Spezialattacke.</div><div>🎨 <b>Lesen und malen:</b> Lies den Auftrag und male direkt ins Bild. Ein Erwachsener schaut mit dir nach; nach fünf bestätigten Aufgaben gibt es eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart;$('matching').onclick=matchStart;$('reverse').onclick=reverseStart;$('paint').onclick=paintStart;$('trainerOpen').onclick=trainerPass;for(const id of ['start','read','letters','stories','matching','reverse','paint']){$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click()}}}}
 
 // LEVEL 4: Handgeprüfte Silben sind mit | getrennt. Gleiche Pokémon in beiden Bildern:
 // Die Lösung ergibt sich aus der Handlung oder Position, nicht allein aus dem Namen.
@@ -543,13 +646,14 @@ function matchFinish(){
 const REVERSE_DISTRACTORS=[["Pikachu läuft über die Wiese.","Pikachu sitzt wach im Gras.","Pikachu springt in die Luft."],["Pikachu schläft auf der Wiese.","Pikachu liegt mit geschlossenen Augen da.","Pikachu macht ein Nickerchen."],["Bisasam steht hinter dem Baum.","Bisasam sitzt auf dem Baum.","Bisasam schläft unter dem Baum."],["Bisasam steht vor dem Baum.","Bisasam sitzt oben im Baum.","Bisasam läuft vom Baum weg."],["Schiggy sitzt ruhig neben dem Ball.","Schiggy liegt auf dem Ball.","Schiggy hält den Ball über den Kopf."],["Schiggy spielt gerade mit dem Ball.","Schiggy hält den Ball hoch.","Schiggy rennt dem Ball hinterher."],["Glumanda sitzt neben dem Ball.","Glumanda schläft beim Ball.","Glumanda pflückt Beeren am Strauch."],["Glumanda rennt hinter einem Ball her.","Glumanda sitzt auf einem Stein.","Glumanda schläft im Gras."],["Enton schläft unter dem Baum.","Enton pflückt eine Blume.","Enton sitzt in einer Hängematte."],["Enton gießt die Blumen.","Enton rennt über die Wiese.","Enton pflanzt eine Blume ein."],["Enton sitzt in der Hängematte.","Enton isst ein Stück Melone.","Enton gießt die Blumen."],["Enton macht einen Spaziergang.","Enton liegt in einer Hängematte.","Enton wäscht einen Ball."],["Mauzi sitzt oben auf der Bank.","Mauzi läuft hinter der Bank entlang.","Mauzi schläft auf der Bank."],["Mauzi sitzt unter der Bank.","Mauzi steht vor der Bank.","Mauzi läuft an der Bank vorbei."],["Enton liegt in einer Hängematte.","Enton gießt eine Blume mit dem Schlauch.","Enton wäscht einen Ball."],["Enton pflanzt eine Blume ein.","Enton wandert über die Wiese.","Enton sitzt auf einer Bank."],["Pikachu gibt Schiggy die Schaufel.","Schiggy gibt Pikachu einen Ball.","Pikachu gibt Schiggy einen Ball."],["Schiggy gibt Pikachu die Schaufel.","Pikachu bekommt die Schaufel von Schiggy.","Schiggy gibt Pikachu einen Ball."],["Glumanda steht neben dem Stein.","Glumanda liegt hinter dem Stein.","Glumanda springt vom Stein herunter."],["Glumanda steht auf dem Stein.","Glumanda sitzt unter dem Stein.","Glumanda springt auf den Stein."],["Schiggy springt über ein Seil.","Schiggy spielt mit einem Fußball.","Schiggy sitzt neben dem Ball."],["Schiggy spritzt Wasser.","Schiggy hält einen Ball fest.","Schiggy liegt in einer Hängematte."],["Enton spielt mit einem sauberen Ball.","Enton läuft einem Ball hinterher.","Enton berührt das Wasser im Teich."],["Enton wäscht einen Ball.","Enton gießt die Blumen.","Enton sitzt neben dem Teich."],["Bisasam gibt Schiggy den Ball.","Schiggy bekommt einen Ball von Bisasam.","Schiggy gibt Bisasam eine Schaufel."],["Schiggy gibt Bisasam den Ball.","Bisasam bekommt den Ball von Schiggy.","Bisasam gibt Schiggy eine Schaufel."],["Schiggy gibt Glumanda den Ball.","Glumanda bekommt den Ball von Schiggy.","Glumanda gibt Schiggy eine Schaufel."],["Glumanda gibt Schiggy den Ball.","Schiggy bekommt den Ball von Glumanda.","Schiggy gibt Glumanda eine Schaufel."],["Schiggy sitzt neben dem Fußball.","Schiggy rutscht ins Wasser.","Schiggy springt mit einem Seil."],["Schiggy spielt Fußball.","Schiggy sitzt neben dem Ball.","Schiggy spritzt Wasser aus dem Mund."],["Enton berührt das Wasser im Teich.","Enton gießt die Blumen.","Enton wäscht einen Ball."],["Enton spritzt Wasser mit dem Schlauch.","Enton gießt die Blumen.","Enton schläft neben dem Teich."]];
 const REVERSE_LEVEL_KEY='pokemonabc-reverse-level-v1';
 let reverseLevel=Math.min(3,Math.max(1,Number(localStorage.getItem(REVERSE_LEVEL_KEY))||1));
-let reverseStars=0,reverseTask=null,reverseChoices=[],reverseCorrect=-1,reverseAnswered=false;
+let reverseStars=0,reverseTask=null,reverseChoices=[],reverseCorrect=-1,reverseAnswered=false,reversePending=null;
 let reverseRecent=[],reverseLastSentences=new Map();
 function reverseStart(){stop();stage='reverse';reverseStars=0;reverseRecent=[];reverseNext()}
 function reverseSetLevel(n){reverseLevel=Math.min(3,Math.max(1,n));localStorage.setItem(REVERSE_LEVEL_KEY,String(reverseLevel));reverseStars=0;reverseRecent=[];reverseNext()}
 function reverseNext(){
+ const oldConfirm=document.getElementById('reverseConfirm');if(oldConfirm)oldConfirm.remove();
  if('speechSynthesis'in window)speechSynthesis.cancel();
- stage='reverse';reverseAnswered=false;
+ stage='reverse';reverseAnswered=false;reversePending=null;
  const indices=STORY_TASKS.map((t,i)=>i).filter(i=>STORY_TASKS[i].level===reverseLevel);
  let eligible=indices.filter(i=>!reverseRecent.includes(i)&&!reverseRecent.includes(i^1));
  if(!eligible.length)eligible=indices.filter(i=>!reverseRecent.includes(i));
@@ -581,9 +685,29 @@ function reverseRender(){
   const b=document.createElement('button');b.className='reverse-choice'+(storyColors?'':' no-colors');b.dataset.index=i;
   b.setAttribute('aria-label',String.fromCharCode(65+i)+': '+item.text);
   b.innerHTML=`<span class="reverse-letter">${String.fromCharCode(65+i)}</span><span class="reverse-text">${storyWords(matchWords(item.text))}</span>`;
-  b.onclick=()=>reverseChoose(i);$('reverseChoices').append(b);
+  b.onclick=()=>reversePreview(i);$('reverseChoices').append(b);
  });
  $('reverseActions').append(btn('🔄 Neues Bild',reverseNext,'muted'),btn('⌂ Startseite',home,'muted'));
+}
+function reversePreview(i){
+ if(stage!=='reverse'||reverseAnswered)return;
+ reversePending=i;
+ app.querySelectorAll('.reverse-choice').forEach((b,j)=>b.classList.toggle('pending',i===j));
+ const shade=document.createElement('div');shade.className='reverse-confirm-shade';shade.id='reverseConfirm';
+ shade.setAttribute('role','dialog');shade.setAttribute('aria-modal','true');shade.setAttribute('aria-label','Antwort bestätigen');
+ const panel=document.createElement('div');panel.className='reverse-confirm-box';
+ const title=document.createElement('h2');title.textContent='Ist das deine Antwort?';
+ const sentence=document.createElement('div');sentence.className='reverse-confirm-text';sentence.textContent=reverseChoices[i].text;
+ const actions=document.createElement('div');actions.className='reverse-confirm-actions';
+ const no=btn('✖ Nein',()=>reverseCancel(),'confirm-no');
+ const yes=btn('✔ Ja!',()=>{shade.remove();reversePending=null;reverseChoose(i)},'confirm-yes');
+ actions.append(no,yes);panel.append(title,sentence,actions);shade.append(panel);document.body.append(shade);
+ no.focus();
+}
+function reverseCancel(){
+ const shade=document.getElementById('reverseConfirm');if(shade)shade.remove();
+ reversePending=null;
+ app.querySelectorAll('.reverse-choice.pending').forEach(b=>b.classList.remove('pending'));
 }
 function reverseChoose(i){
  if(stage!=='reverse'||reverseAnswered)return;
