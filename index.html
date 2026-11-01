@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.8 · Leseabenteuer</title>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#f1f7ff"><meta name="apple-mobile-web-app-capable" content="yes"><title>Pokémon ABC – Version 1.9 · Leseabenteuer</title>
 <style>
 :root{font-family:"Chalkboard SE","Comic Sans MS",ui-rounded,system-ui,-apple-system,sans-serif;color:#223a56;background:#eaf4ff}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 10% 0,#fff9ce,transparent 37%),linear-gradient(145deg,#e5f7ed,#e9f3ff 68%,#fcecff)}button{font:inherit;font-weight:800;border:0;border-radius:16px;padding:12px 18px;min-height:49px;background:#fff;color:#254363;box-shadow:0 3px 0 #bed0dd;cursor:pointer;touch-action:manipulation}button:active{transform:translateY(2px);box-shadow:0 1px 0 #bed0dd}button:disabled{opacity:.42;transform:none;cursor:default}.primary{background:#ffcc43;box-shadow:0 4px 0 #e5a927}.blue{background:#4c80e5;color:#fff;box-shadow:0 4px 0 #3156a5}.green{background:#39b887;color:white;box-shadow:0 4px 0 #239268}.muted{background:#eaf0f8;box-shadow:0 3px 0 #cbd6e5}.shell{max-width:1250px;margin:auto;padding:16px clamp(10px,2.4vw,24px) 35px}.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.logo{font-weight:950;font-size:clamp(22px,3.5vw,34px);letter-spacing:-.8px;color:#2a61b2}.version{font-size:12px;color:#66829b;margin-left:8px}.score{border-radius:40px;background:white;padding:10px 17px;font-weight:850;box-shadow:0 3px 12px #28456913}.panel{border:3px solid #fff;background:#ffffffed;border-radius:30px;padding:clamp(14px,2.8vw,30px);box-shadow:0 12px 38px #23456619;text-align:center}.eyebrow{color:#5170a0;font-weight:850;letter-spacing:.5px;font-size:14px;text-transform:uppercase}.title{font-size:clamp(25px,4vw,39px);font-weight:950;line-height:1.15;margin:8px 0}.sub{color:#5e7389;margin:7px auto 17px;font-size:clamp(15px,1.7vw,18px);max-width:760px}.steps{display:flex;gap:7px;justify-content:center;align-items:center;margin:10px auto 18px}.step{padding:8px 13px;border-radius:25px;background:#e8edf6;color:#667c9a;font-size:13px;font-weight:900}.step.on{background:#ffe19a;color:#8b5a00}.step.done{background:#d7f5e8;color:#217753}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;margin:16px 0 4px}.pokemonWrap{position:relative;display:grid;place-items:center;min-height:220px;max-width:390px;margin:0 auto 4px;background:radial-gradient(ellipse at center,#e2f5ff 0,#effaff 60%,transparent 70%);border-radius:50%}.pokemon{width:min(260px,55vw);height:225px;object-fit:contain;filter:drop-shadow(0 12px 6px #324b6825)}.fallback{font-size:76px;display:none}.pokename{font-size:clamp(30px,5vw,54px);font-weight:950;letter-spacing:1px;color:#315f9f;margin:12px 0}.slots{display:flex;justify-content:center;gap:5px;flex-wrap:wrap;margin:10px auto 18px}.slot{height:52px;min-width:clamp(29px,4.6vw,47px);border-bottom:4px solid #8cb1e4;font-size:clamp(23px,3.4vw,32px);font-weight:950;display:grid;place-items:center;color:#244a84}.tiles{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;max-width:790px;margin:14px auto}.tile{font-size:clamp(22px,3vw,30px);min-width:52px;padding:8px 12px;background:#f7d85e;box-shadow:0 4px 0 #d8b640}.tile.used{visibility:hidden}.tile .school-word{pointer-events:none}.slot .school-word{pointer-events:none}.message{min-height:29px;font-size:18px;font-weight:800;color:#386db3;margin:10px 0}.writing{margin:15px -5px 8px;overflow-x:auto;overflow-y:hidden;border:3px solid #d8e7f7;border-radius:20px;background:#fffefb;overscroll-behavior-x:contain}.board{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}.board.free{min-height:250px}.legend{font-size:14px;color:#637990;margin:8px auto;max-width:900px}.note{font-size:12px;color:#7990a5;margin-top:20px}.modecards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:830px;margin:22px auto}.modecard{padding:24px 15px;min-height:150px;border:3px solid #d9e8f8;background:#f7fbff;border-radius:22px;text-align:center;cursor:pointer}.modecard strong{display:block;font-size:23px;margin:10px 0}.modecard span{font-size:15px;color:#647b96}.choicegrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;max-width:620px;margin:14px auto}.choice{background:#f7fbff;border:3px solid #d9e7f6;border-radius:22px;min-height:170px;display:grid;place-items:center}.choice img{height:125px;max-width:100%;object-fit:contain}.choice.good{border-color:#39b887;background:#e8fff5}.choice.bad{border-color:#ed8383;background:#fff0f0}.mini{font-size:14px}.complete{font-size:75px;line-height:1.3}.hide{display:none!important}@media(max-width:620px){.shell{padding:9px 8px 24px}.panel{padding:13px 9px;border-radius:22px}.steps{gap:4px}.step{font-size:11px;padding:7px 9px}.tile{min-width:43px}.slot{height:45px}.modecards{grid-template-columns:1fr}.pokemonWrap{min-height:180px}.pokemon{height:185px}.choice{min-height:130px}.choice img{height:100px}}
 
@@ -143,7 +143,23 @@
 .reverse-choice:disabled{opacity:1;cursor:default}
 .reverse-status{text-align:center;min-height:30px;font-size:19px;font-weight:850;color:#426e95;margin:12px auto}
 @media(max-width:620px){.reverse-image img{max-height:270px}.reverse-choice{font-size:clamp(17px,4.4vw,23px);padding:10px;min-height:65px;gap:9px}.reverse-choice .reverse-letter{flex-basis:30px;height:30px}.reverse-image{padding:5px}}
-</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.7 · Leseabenteuer</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
+
+/* Lesen und malen: berührungssichere Zeichenfläche, auch für Apple Pencil */
+.paint-head{font-size:clamp(21px,3vw,30px);font-weight:900;line-height:1.45;color:#27599a;background:#f1f8ff;border:2px solid #d6e6fa;border-radius:20px;padding:17px;margin:14px auto;max-width:970px}
+.paint-top{display:flex;justify-content:center;gap:10px;align-items:center;flex-wrap:wrap;margin:12px auto}
+.paint-board{position:relative;width:100%;max-width:990px;margin:12px auto;background:#fff;border:3px solid #c7dced;border-radius:20px;overflow:hidden;aspect-ratio: 900 / 520;touch-action:none;user-select:none;-webkit-user-select:none}
+.paint-board svg,.paint-board canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.paint-board canvas{touch-action:none;cursor:crosshair}
+.paint-tools{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:14px auto}
+.paint-swatch{width:48px;height:48px;min-height:48px;border:3px solid #d5e0ed;border-radius:50%;padding:0;box-shadow:0 2px 0 #a9bdcd}
+.paint-swatch.active{outline:4px solid #417cda;outline-offset:2px}
+.paint-tools .paint-tool-active{outline:3px solid #417cda}
+.paint-feedback{font-size:17px;font-weight:750;min-height:30px;color:#346eaf;margin:10px}
+.paint-parent{background:#fff8df;border:2px solid #e6d39a;border-radius:17px;padding:13px;max-width:850px;margin:16px auto}
+.paint-parent .actions{margin:10px 0 0}
+.paint-stamp{font-size:13px;color:#71869d}
+@media(max-width:620px){.paint-swatch{width:39px;height:39px;min-height:39px}.paint-head{padding:12px;font-size:20px}}
+</style></head><body><main class="shell"><div class="header"><div class="logo">⚡ Pokémon ABC <span class="version">Version 1.9 · Leseabenteuer</span></div><div class="score">⭐ <span id="score">0</span> Sterne</div></div><section class="panel" id="app"></section></main>
 <script>
 'use strict';
 // POKÉMON-INDEX: Diese Liste steuert sowohl Namen-Schreiben als auch Namen-Lesen.
@@ -245,10 +261,10 @@ function reward(kind,after,context='writing'){
  shade.append(box);document.body.append(shade);continueBtn.focus();
 }
 
-function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein Pokémon-Lernabenteuer</div><h1 class="title">Lesen und Schreiben lernen!</h1><p class="sub">Vom ersten Buchstaben bis zum ganzen Satz. Wähle aus, was du heute üben möchtest.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="letters" role="button" tabindex="0"><div class="mode-number">1</div><div class="mode-emoji">✏️</div><strong>Buchstaben schreiben</strong><span>Buchstaben nachspuren und üben</span></div><div class="modecard" id="read" role="button" tabindex="0"><div class="mode-number">2</div><div class="mode-emoji">👀</div><strong>Pokémon-Namen lesen</strong><span>Namen lesen und Pokémon erkennen</span></div><div class="modecard" id="start" role="button" tabindex="0"><div class="mode-number">3</div><div class="mode-emoji">📝</div><strong>Pokémon-Namen schreiben</strong><span>Buchstaben legen, Namen nachspuren und selbst schreiben</span></div><div class="modecard" id="stories" role="button" tabindex="0"><div class="mode-number">4</div><div class="mode-emoji">📖</div><strong>Sätze lesen</strong><span>Erst lesen, dann das passende Bild finden</span></div><div class="modecard" id="matching" role="button" tabindex="0"><div class="mode-number">5</div><div class="mode-emoji">🧩</div><strong>Sätze zuordnen</strong><span>Vier Sätze genau lesen und Bilder verbinden</span></div><div class="modecard" id="reverse" role="button" tabindex="0"><div class="mode-number">6</div><div class="mode-emoji">🔎</div><strong>Welcher Satz passt?</strong><span>Ein Bild ansehen und den richtigen Satz lesen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
+function home(){stop();stage='home';app.innerHTML=`<div class="eyebrow">Dein Pokémon-Lernabenteuer</div><h1 class="title">Lesen und Schreiben lernen!</h1><p class="sub">Vom ersten Buchstaben bis zum ganzen Satz. Wähle aus, was du heute üben möchtest.</p>${pokemonImg(P[0])}<div class="modecards"><div class="modecard" id="letters" role="button" tabindex="0"><div class="mode-number">1</div><div class="mode-emoji">✏️</div><strong>Buchstaben schreiben</strong><span>Buchstaben nachspuren und üben</span></div><div class="modecard" id="read" role="button" tabindex="0"><div class="mode-number">2</div><div class="mode-emoji">👀</div><strong>Pokémon-Namen lesen</strong><span>Namen lesen und Pokémon erkennen</span></div><div class="modecard" id="start" role="button" tabindex="0"><div class="mode-number">3</div><div class="mode-emoji">📝</div><strong>Pokémon-Namen schreiben</strong><span>Buchstaben legen, Namen nachspuren und selbst schreiben</span></div><div class="modecard" id="stories" role="button" tabindex="0"><div class="mode-number">4</div><div class="mode-emoji">📖</div><strong>Sätze lesen</strong><span>Erst lesen, dann das passende Bild finden</span></div><div class="modecard" id="matching" role="button" tabindex="0"><div class="mode-number">5</div><div class="mode-emoji">🧩</div><strong>Sätze zuordnen</strong><span>Vier Sätze genau lesen und Bilder verbinden</span></div><div class="modecard" id="reverse" role="button" tabindex="0"><div class="mode-number">6</div><div class="mode-emoji">🔎</div><strong>Welcher Satz passt?</strong><span>Ein Bild ansehen und den richtigen Satz lesen</span></div><div class="modecard" id="paint" role="button" tabindex="0"><div class="mode-number">7</div><div class="mode-emoji">🎨</div><strong>Lesen und malen</strong><span>Eine Anweisung lesen und ins Bild zeichnen</span></div></div><div class="reward-guide"><strong>🌟 Wann kommt welches Pokémon?</strong>
 <div>⭐ <b>Kleine Belohnung:</b> Nach einem richtig gelegten Namen, einem vollständig nachgespurten Namen oder einer richtig gelösten Leserunde.</div>
 <div>🏆 <b>Besonderes Pokémon mit Attacke:</b> Wenn ein ganzer Pokémon-Name nach dem Abschreiben auch frei geschrieben und mit „Fertig!“ abgeschlossen wurde.</div>
-<div>📖 <b>Sätze lesen:</b> Nur beim ersten Versuch richtig gewählte Bilder geben einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>🧩 <b>Sätze zuordnen:</b> Vier passende Bildpaare ergeben eine Runde. Nur fehlerfreie Runden bringen einen Stern. Nach fünf fehlerfreien Runden kommt eine Spezialattacke.</div><div>🔎 <b>Welcher Satz passt?:</b> Ein Bild und vier Sätze. Für die erste richtige Antwort gibt es einen Stern; nach fünf Sternen eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart;$('matching').onclick=matchStart;$('reverse').onclick=reverseStart;for(const id of ['start','read','letters','stories','matching','reverse']){$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click()}}}}
+<div>📖 <b>Sätze lesen:</b> Nur beim ersten Versuch richtig gewählte Bilder geben einen Stern. Nach fünf Sätzen kommt eine Spezialattacke.</div><div>🧩 <b>Sätze zuordnen:</b> Vier passende Bildpaare ergeben eine Runde. Nur fehlerfreie Runden bringen einen Stern. Nach fünf fehlerfreien Runden kommt eine Spezialattacke.</div><div>🔎 <b>Welcher Satz passt?:</b> Ein Bild und vier Sätze. Für die erste richtige Antwort gibt es einen Stern; nach fünf Sternen eine Spezialattacke.</div><div>🎨 <b>Lesen und malen:</b> Lies den Auftrag und male direkt ins Bild. Ein Erwachsener schaut mit dir nach; nach fünf bestätigten Aufgaben gibt es eine Spezialattacke.</div><div>▶ Die Belohnung bleibt, bis du „Weiter!“ drückst.</div></div><p class="note">Für Finger und Apple Pencil · Der Spielstand bleibt auf diesem Gerät gespeichert.</p>`;$('start').onclick=startGame;$('read').onclick=reading;$('letters').onclick=()=>openLetterTrainer('home');$('stories').onclick=storyStart;$('matching').onclick=matchStart;$('reverse').onclick=reverseStart;$('paint').onclick=paintStart;for(const id of ['start','read','letters','stories','matching','reverse','paint']){$(id).onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$(id).click()}}}}
 
 // LEVEL 4: Handgeprüfte Silben sind mit | getrennt. Gleiche Pokémon in beiden Bildern:
 // Die Lösung ergibt sich aus der Handlung oder Position, nicht allein aus dem Namen.
@@ -794,6 +810,105 @@ function openLetterTrainer(from='home'){
   controls(btn('← Zurück '+(from==='trace'?'zum Pokémon-Namen':'zur Startseite'),
     ()=>{if(trainerReturn==='trace')renderTrace();else home()},'primary'));
   $('letterTrainerFrame').srcdoc=letterTrainerHtml;
+}
+
+
+// Lernbereich 7: Lesen und Malen. Neue Zeichnungen werden nur auf der transparenten
+// Canvas-Ebene erstellt; die SVG-Vorlage bleibt bei Radieren/Rückgängig unverändert.
+const PAINT_TASKS=[
+ {l:1,mon:'Schiggy',id:7,place:'tree',text:'Male einen roten Ball neben den Baum.'},
+ {l:1,mon:'Pikachu',id:25,place:'meadow',text:'Male eine gelbe Sonne über Pikachu.'},
+ {l:1,mon:'Bisasam',id:1,place:'meadow',text:'Male zwei rote Blumen neben Bisasam.'},
+ {l:1,mon:'Glumanda',id:4,place:'bench',text:'Male einen blauen Ball unter die Bank.'},
+ {l:1,mon:'Evoli',id:133,place:'tree',text:'Male eine grüne Blume unter den Baum.'},
+ {l:1,mon:'Enton',id:54,place:'pond',text:'Male eine Wolke über den Teich.'},
+ {l:2,mon:'Schiggy',id:7,place:'tree',text:'Male drei rote Äpfel an den Baum.'},
+ {l:2,mon:'Pikachu',id:25,place:'bench',text:'Male einen grünen Ball auf die Bank.'},
+ {l:2,mon:'Bisasam',id:1,place:'meadow',text:'Male zwei gelbe Sterne über Bisasam.'},
+ {l:2,mon:'Glumanda',id:4,place:'tree',text:'Male eine blaue Blume rechts neben den Baum.'},
+ {l:2,mon:'Evoli',id:133,place:'pond',text:'Male einen roten Ball links neben den Teich.'},
+ {l:2,mon:'Enton',id:54,place:'bench',text:'Male zwei rote Blumen vor die Bank.'},
+ {l:3,mon:'Schiggy',id:7,place:'bench',text:'Male einen roten Ball auf die Bank und einen blauen Ball darunter.'},
+ {l:3,mon:'Pikachu',id:25,place:'tree',text:'Male zwei gelbe Sterne über den Baum und eine rote Blume darunter.'},
+ {l:3,mon:'Bisasam',id:1,place:'pond',text:'Male drei blaue Tropfen in den Teich und eine Sonne darüber.'},
+ {l:3,mon:'Glumanda',id:4,place:'meadow',text:'Male einen grünen Ball links von Glumanda und einen roten Ball rechts davon.'},
+ {l:3,mon:'Evoli',id:133,place:'bench',text:'Male zwei Blumen vor die Bank. Eine ist rot, die andere blau.'},
+ {l:3,mon:'Enton',id:54,place:'tree',text:'Male drei rote Äpfel an den Baum und einen grünen Ball darunter.'}
+];
+const PAINT_LEVEL_KEY='pokemonabc-paint-level-v1';
+let paintLevel=Math.min(3,Math.max(1,Number(localStorage.getItem(PAINT_LEVEL_KEY))||1));
+let paintStars=0,paintTask=null,paintRecent=[],paintStrokes=[],paintActive=null,paintColor='#e74747',paintWidth=8,paintEraser=false,paintPointer=null,paintApproved=false;
+const PAINT_COLORS=[['Rot','#e74747'],['Blau','#377ee4'],['Gelb','#f3be31'],['Grün','#3fa65b'],['Lila','#9d69ce'],['Schwarz','#292e38'],['Braun','#96633f']];
+function paintStart(){stop();stage='paint';paintStars=0;paintRecent=[];paintNext()}
+function paintSetLevel(level){paintLevel=level;localStorage.setItem(PAINT_LEVEL_KEY,String(level));paintStars=0;paintRecent=[];paintNext()}
+function paintNext(){
+ stage='paint';paintApproved=false;paintStrokes=[];paintActive=null;paintEraser=false;
+ let options=PAINT_TASKS.map((t,i)=>({...t,idx:i})).filter(t=>t.l===paintLevel&&!paintRecent.includes(t.idx));
+ if(!options.length){paintRecent=[];options=PAINT_TASKS.map((t,i)=>({...t,idx:i})).filter(t=>t.l===paintLevel)}
+ paintTask=random(options);paintRecent.push(paintTask.idx);paintRecent=paintRecent.slice(-4);
+ paintRender();
+}
+function paintTemplate(t){
+ const line='#627b8d';
+ const tree=`<path d="M167 390V192 Q167 178 183 178H207Q221 178 221 192V390" fill="#d7b68e" stroke="${line}" stroke-width="5"/><path d="M190 214C132 254 89 216 100 161C66 124 95 73 149 81C175 28 247 37 266 91C326 88 344 156 294 190C276 243 226 242 190 214Z" fill="#e9f6e7" stroke="${line}" stroke-width="6"/>`;
+ const bench=`<rect x="84" y="290" width="375" height="36" rx="6" fill="#e8d4bb" stroke="${line}" stroke-width="5"/><rect x="104" y="217" width="335" height="64" rx="6" fill="#f3e4d0" stroke="${line}" stroke-width="5"/><path d="M130 326v90M411 326v90" stroke="${line}" stroke-width="13" stroke-linecap="round"/>`;
+ const pond=`<ellipse cx="260" cy="379" rx="220" ry="72" fill="#e1f3fa" stroke="${line}" stroke-width="5"/><path d="M132 373q30-14 60 0t60 0t60 0t60 0" fill="none" stroke="#a1cfe4" stroke-width="5"/>`;
+ const scenes={tree,bench,pond,meadow:`<path d="M88 388q17-31 34 0M164 413q20-29 40 0M297 388q18-28 36 0" fill="none" stroke="#94c38d" stroke-width="5"/>`};
+ const pos=t.place==='bench'?{x:560,y:205,w:235}:t.place==='tree'?{x:530,y:193,w:245}:t.place==='pond'?{x:595,y:184,w:205}:{x:340,y:176,w:235};
+ const pokemon=`<image href="${imageUrl(['',t.id])}" x="${pos.x}" y="${pos.y}" width="${pos.w}" height="${pos.w}" preserveAspectRatio="xMidYMid meet"/>`;
+ return `<svg viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-label="Malvorlage mit ${esc(t.mon)}"><rect width="900" height="520" fill="#fcfeff"/><path d="M0 413 Q200 387 420 418 T900 411V520H0Z" fill="#f0f8ed"/><path d="M0 415H900" stroke="#b6d6b0" stroke-width="4"/>${scenes[t.place]}${pokemon}<path d="M48 459q10-21 20 0m730-8q13-27 27 0" fill="none" stroke="#9dc698" stroke-width="5"/></svg>`;
+}
+function paintRender(){
+ app.innerHTML=`<div class="eyebrow">🎨 Lesen und malen · Leseabenteuer</div><h1 class="title">Lies und zeichne!</h1><p class="sub">Lies den Auftrag genau und male das Richtige in das Bild.</p>
+ <div class="paint-top"><div class="story-levels" id="paintLevels"></div><div class="story-progress">⭐ ${paintStars} von 5 bestätigten Bildern</div></div>
+ <div class="paint-head">${esc(paintTask.text)}</div>
+ <div class="paint-board" id="paintBoard">${paintTemplate(paintTask)}<canvas id="paintCanvas" width="900" height="520" aria-label="Hier mit Finger oder Apple Pencil malen"></canvas></div>
+ <div class="paint-tools" id="paintTools"></div><div class="paint-feedback" id="paintFeedback" aria-live="polite">Wähle eine Farbe und male mit dem Finger oder Apple Pencil.</div>
+ <div class="paint-parent"><strong>👨‍👩‍👧 Gemeinsam anschauen</strong><p class="sub">Zeige dein Bild einem Erwachsenen. Ihr entscheidet gemeinsam, ob der Auftrag erfüllt ist.</p><div class="actions" id="paintParentActions"></div></div>
+ <div class="actions" id="paintNav"></div>`;
+ const levels=$('paintLevels');['🐣 Einfach','🌿 Mittel','🚀 Schwer'].forEach((s,i)=>{const b=btn(s,()=>paintSetLevel(i+1));if(i+1===paintLevel)b.classList.add('active');levels.append(b)});
+ const tools=$('paintTools');PAINT_COLORS.forEach(([name,color])=>{const b=btn('',()=>{paintColor=color;paintEraser=false;paintToolHighlight()},'paint-swatch');b.title=name;b.setAttribute('aria-label',name);b.dataset.color=color;b.style.background=color;tools.append(b)});
+ const small=btn('✏️ Dünn',()=>{paintWidth=5;paintToolHighlight()},'muted');small.id='paintThin';tools.append(small);
+ const thick=btn('🖍️ Dick',()=>{paintWidth=14;paintToolHighlight()},'muted');thick.id='paintThick';tools.append(thick);
+ const eraser=btn('🧽 Radierer',()=>{paintEraser=true;paintToolHighlight()},'muted');eraser.id='paintErase';tools.append(eraser);
+ tools.append(btn('↶ Rückgängig',()=>{paintStrokes.pop();paintRedraw()},'muted'));
+ tools.append(btn('🗑️ Zeichnung löschen',()=>{if(confirm('Deine Zeichnung wirklich löschen?')){paintStrokes=[];paintRedraw()}},'muted'));
+ const parent=$('paintParentActions');parent.append(btn('🌟 Auftrag geschafft!',paintAccept,'green'),btn('✏️ Noch weiter malen',()=>{$('paintFeedback').textContent='Nimm dir Zeit und ergänze deine Zeichnung.'},'muted'));
+ $('paintNav').append(btn('🔄 Neuer Auftrag',paintNext,'muted'),btn('⌂ Startseite',home,'muted'));
+ paintToolHighlight();paintBind();
+}
+function paintToolHighlight(){
+ if(!$('paintTools'))return;
+ $('paintTools').querySelectorAll('.paint-swatch').forEach(b=>b.classList.toggle('active',!paintEraser&&b.dataset.color===paintColor));
+ $('paintErase').classList.toggle('paint-tool-active',paintEraser);
+ $('paintThin').classList.toggle('paint-tool-active',!paintEraser&&paintWidth===5);
+ $('paintThick').classList.toggle('paint-tool-active',!paintEraser&&paintWidth===14);
+}
+function paintPoint(e){const rect=$('paintCanvas').getBoundingClientRect();return {x:Math.max(0,Math.min(900,(e.clientX-rect.left)*900/rect.width)),y:Math.max(0,Math.min(520,(e.clientY-rect.top)*520/rect.height))}}
+function paintBind(){
+ const c=$('paintCanvas');
+ c.addEventListener('pointerdown',e=>{if(paintApproved||paintPointer!==null)return;e.preventDefault();paintPointer=e.pointerId;c.setPointerCapture(e.pointerId);paintActive={color:paintEraser?'erase':paintColor,width:paintEraser?34:paintWidth,points:[paintPoint(e)]};paintStrokes.push(paintActive);paintRedraw()});
+ c.addEventListener('pointermove',e=>{if(paintPointer!==e.pointerId||!paintActive)return;e.preventDefault();paintActive.points.push(paintPoint(e));paintRedraw()});
+ const done=e=>{if(paintPointer!==e.pointerId)return;paintPointer=null;paintActive=null};
+ c.addEventListener('pointerup',done);c.addEventListener('pointercancel',done);c.addEventListener('lostpointercapture',()=>{paintPointer=null;paintActive=null});
+}
+function paintRedraw(){
+ const c=$('paintCanvas');if(!c)return;const ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
+ for(const s of paintStrokes){ctx.save();ctx.globalCompositeOperation=s.color==='erase'?'destination-out':'source-over';ctx.lineWidth=s.width;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=s.color==='erase'?'#000':s.color;ctx.fillStyle=ctx.strokeStyle;const pts=s.points;if(!pts.length){ctx.restore();continue}if(pts.length===1){ctx.beginPath();ctx.arc(pts[0].x,pts[0].y,s.width/2,0,Math.PI*2);ctx.fill()}else{ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i].x,pts[i].y);ctx.stroke()}ctx.restore()}
+}
+function paintAccept(){
+ if(paintApproved)return;
+ if(!paintStrokes.some(s=>s.color!=='erase')){$('paintFeedback').textContent='Male zuerst etwas in das Bild.';return}
+ paintApproved=true;score();paintStars++;
+ $('paintFeedback').textContent='🌟 Toll! Ihr habt das Bild gemeinsam kontrolliert.';
+ if(paintStars>=5)reward('special',paintFinish,'paint');else reward('small',paintNext,'paint');
+}
+function paintFinish(){
+ stage='paint-finish';app.innerHTML=`<div class="eyebrow">🎨 Lesen und malen</div><div class="story-level-up"><h2>🏆 Fünf tolle Zeichnungen!</h2><p>Du hast gelesen, gemalt und ganz genau hingeschaut!</p><div class="story-actions" id="paintFinishActions"></div></div>`;
+ const a=$('paintFinishActions');if(paintLevel<3)a.append(btn('🚀 Schwieriger!',()=>paintSetLevel(paintLevel+1),'primary'));
+ a.append(btn('🎨 Weiter malen',()=>{paintStars=0;paintNext()},'green'));
+ if(paintLevel>1)a.append(btn('🐣 Leichter',()=>paintSetLevel(paintLevel-1),'muted'));
+ a.append(btn('⌂ Startseite',home,'muted'));
 }
 
 home();
